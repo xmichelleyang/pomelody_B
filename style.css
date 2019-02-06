@@ -45,3 +45,10 @@ input.url-input {
 h1 {
 	text-align: center;
 }
+
+.alignleft {
+	float: left;
+}
+.alignright {
+	float: right;
+}
