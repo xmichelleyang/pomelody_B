@@ -35,13 +35,14 @@ input.url-input {
 }
 .header {
 	margin: 20px;
-	margin-top: 40px;	
+	margin-top: 40px;
+	text-align: center;	
 }
 .footer button {
 	margin: 20px;
 }
 
-h1 {
+h1,h2 {
 	text-align: center;
 }
 
