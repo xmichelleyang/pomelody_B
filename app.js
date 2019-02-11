@@ -8,7 +8,7 @@ var http = require('http');
 var path = require('path');
 var handlebars = require('express3-handlebars')
 
-var index = require('./routes/index');
+var index = require('./public/welcome-to-pomelody.html');
 // Example route
 // var user = require('./routes/user');
 
