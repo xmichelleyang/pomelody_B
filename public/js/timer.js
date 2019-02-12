@@ -25,7 +25,14 @@ var CountDown = (function ($) {
             // When the timer is DONE
             if( CurrentTime >= EndTime ) {
                 GuiTimer.css('color','red');
-                window.location = '../public/treat-yourself.html'
+
+                // // Dynamically switch between pages
+                if(whichPage() == "relax") {
+                  window.location = '../public/treat-yourself.html'
+                }
+                else {
+                  window.location = '../public/you-can-do-it.html'
+                }
             }
         }
         // Update Gui
@@ -70,8 +77,9 @@ jQuery('#pause').on('click', CountDown.Pause);
 jQuery('#resume').on('click', CountDown.Resume);
 
 $("#pause").click(function () {
+  console.log(document.URL)
+  
   $("#status").text('Paused');
-
 });
 
 $("#resume").click(function () {
@@ -82,3 +90,12 @@ $("#resume").click(function () {
 // This is where you select the start and end time. Minute * 60,000
 // ms
 CountDown.Start(0.1 * 60000);
+
+function whichPage(){
+  if ((document.URL).includes("you-can-do-it.html"))  {
+    return "relax"
+  }
+  else {
+    return "work"
+  }
+}
