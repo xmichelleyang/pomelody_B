@@ -25,7 +25,7 @@ var CountDown = (function ($) {
             // When the timer is DONE
             if( CurrentTime >= EndTime ) {
                 GuiTimer.css('color','red');
-                alert("Done!")
+                window.location = '../public/treat-yourself.html'
             }
         }
         // Update Gui
@@ -81,4 +81,4 @@ $("#resume").click(function () {
 
 // This is where you select the start and end time. Minute * 60,000
 // ms
-CountDown.Start(5 * 60000);
+CountDown.Start(0.1 * 60000);
