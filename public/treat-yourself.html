@@ -19,10 +19,24 @@
 
             <button type="button" id="control_button"> Pause </button>
 
-            <a href="you-can-do-it.html"> <button type="button" id="control_button"> Skip </button> </a>
+            <button onclick="func1()">Skip</button>
 
-            <a href="welcome-to-pomelody.html"> <button type="button" id="control_button"> Stop </button> </a>
+            <script>
+            function func1() {
+              alert("Are you sure you want to skip to the next session?");
+              window.location.href = "you-can-do-it.html";
+            }
+            </script>
 
+            <button onclick="myFunction()">Stop</button>
+
+            <script>
+            function myFunction() {
+              alert("Are you sure you want to stop the current session?");
+              window.location.href = "welcome-to-pomelody.html";
+            }
+            </script>
+            
             <div class="footer">
 
             <!-- <a href="you-can-do-it.html"> <button type="button" > Next </button> </a> -->

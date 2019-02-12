@@ -1,6 +1,33 @@
 <!DOCTYPE html>
 <html>
+
     <head>
+
+    <script type="text/javascript">
+
+      function checkForm(form)
+      {
+        // validation fails if the input is blank
+        if(form.inputfield.value == "") {
+          alert("Error: Please enter a playlist URL!");
+          form.inputfield.focus();
+          return false;
+        }
+
+        // regular expression to match only alphanumeric characters and spaces
+        var re = /^(http:|https:)\/\/.*$/m
+
+        // validation fails if the input doesn't match our regular expression
+        if(!re.test(form.inputfield.value)) {
+          alert("Error: Input a valid playlist URL");
+          form.inputfield.focus();
+          return false;
+        }
+
+        // validation was successful
+        return true;
+      }
+    </script>
         <meta charset="UTF-8">
         <!-- This is a comment -->
 
@@ -12,15 +39,16 @@
 
 
     <body>
+
         <h1 class="header"> Select Relaxation Settings </h1>
 
         <div class="center-container" id="main-content">
             <div>
                 <h4> Select Playlist URL: </h4>
-                <form>
-                  <input type="text" name="prod-url" class="url-input">
-                  <button type="button" > Enter </button>
-                </form>
+                <form method="POST" action="form-handler" onsubmit="return checkForm(this);">
+                    <p> <input type="text" size="32" name="inputfield">
+                    <input type="submit"></p>
+                    </form>
                 <h4> Select Time Interval: </h4>
                 <div class="center-container">
                     <a href="select-interval-of-time-relax.html"> <button type="button" class="time-button" > 10 min </button> </a>
