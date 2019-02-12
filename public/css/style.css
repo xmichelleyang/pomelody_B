@@ -53,6 +53,6 @@ h1,h2 {
 	float: right;
 }
 
-#control_button {
+.control_button {
 	margin-bottom: 15px;
 }

@@ -7,20 +7,23 @@
         <title> Pomelody </title>
 
         <link href="css/style.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>        
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
 
 
     <body>
-        <h1 class="header"> You Can Do It! </h1>
+        <h1 class="header" id="status"> You Can Do It! </h1>
 
         <div class="center-container" id="main-content">
 
-            <h3 id="timer"> </h3>
+            <h3 id="countdown"> </h3>
 
-            <button type="button" id="control_button" > Pause </button>
+            <button type="button" class="control_button" id="pause"> Pause </button>
 
-            <a href="treat-yourself.html"> <button type="button" id="control_button"  > Skip </button> </a>
+            <button type="button" class="control_button" id="resume"> Resume </button>
+
+            <a href="treat-yourself.html"> <button type="button" class="control_button"  > Skip </button> </a>
 
             <a href="welcome-to-pomelody.html"> <button type="button" id="control_button" > Stop </button> </a>
 
@@ -33,3 +36,4 @@
         <script type="text/javascript" src="js/timer.js"></script>
     </body>
 </html>
+ 

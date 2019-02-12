@@ -1,34 +1,84 @@
-// Set the date we're counting down to
-var countDownDate = addMinutes(new Date(), 1)
-
-// Update the count down every 1 second
-var x = setInterval(function() {
-
-  // Get todays date and time
-  var now = new Date().getTime();
+// Majority of timer code taken from: http://jsfiddle.net/rnQ2W/2/
+var CountDown = (function ($) {
+    // Length ms 
+    var TimeOut = 10000;
+    // Interval ms
+    var TimeGap = 1000;
     
-  // Find the distance between now and the count down date
-  var distance = countDownDate - now;
-  console.log(distance)
-  // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    var CurrentTime = ( new Date() ).getTime();
+    var EndTime = ( new Date() ).getTime() + TimeOut;
     
-  // Output the result in an element with id="timer"
-  document.getElementById("timer").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
+    var GuiTimer = $('#countdown');
+    var GuiPause = $('#pause');
+    var GuiResume = $('#resume').hide();
     
-  // If the count down is over, write some text 
-  if (distance < 0) {
-    clearInterval(x);
-    alert("Time is up!")
-    document.getElementById("timer").innerHTML = "EXPIRED";
-  }
-}, 1000);
+    var Running = true;
+    
+    var UpdateTimer = function() {
+        // Run till timeout
+        if( CurrentTime + TimeGap < EndTime ) {
+            setTimeout( UpdateTimer, TimeGap );
+        }
+        // Countdown if running
+        if( Running ) {
+            CurrentTime += TimeGap;
+            // When the timer is DONE
+            if( CurrentTime >= EndTime ) {
+                GuiTimer.css('color','red');
+                alert("Done!")
+            }
+        }
+        // Update Gui
+        var Time = new Date();
+        Time.setTime( EndTime - CurrentTime );
+        var Minutes = Time.getMinutes();
+        var Seconds = Time.getSeconds();
+        
+        GuiTimer.html( 
+            (Minutes < 10 ? '0' : '') + Minutes 
+            + ':' 
+            + (Seconds < 10 ? '0' : '') + Seconds );
+    };
+    
+    var Pause = function() {
+        Running = false;
+        GuiPause.hide();
+        GuiResume.show();
+    };
+    
+    var Resume = function() {
+        Running = true;
+        GuiPause.show();
+        GuiResume.hide();
+    };
+    
+    var Start = function( Timeout ) {
+        TimeOut = Timeout;
+        CurrentTime = ( new Date() ).getTime();
+        EndTime = ( new Date() ).getTime() + TimeOut;
+        UpdateTimer();
+    };
 
+    return {
+        Pause: Pause,
+        Resume: Resume,
+        Start: Start
+    };
+})(jQuery);
 
-function addMinutes(date, minutes) {
-    return new Date(date.getTime() + minutes*60000);
-}
+jQuery('#pause').on('click', CountDown.Pause);
+jQuery('#resume').on('click', CountDown.Resume);
+
+$("#pause").click(function () {
+  $("#status").text('Paused');
+
+});
+
+$("#resume").click(function () {
+  $("#status").text('You Can Do It!');
+
+});
+
+// This is where you select the start and end time. Minute * 60,000
+// ms
+CountDown.Start(5 * 60000);
