@@ -1,5 +1,31 @@
-function verifyURL(){
+var isProd = false;
+var isRelax = true;
+
+function verifyProdURL(){
   var url = (document.getElementById("prod-url").value);
+  isProd = true;
+  isRelax = false;
+  // validation fails if the input is blank
+  if(url == "") {
+    alert("Error: Please enter a playlist URL!");
+    return false;
+  }
+
+  // regular expression to match only alphanumeric characters and spaces
+  var re = /^(http:|https:)\/\/.*$/m
+
+  // validation fails if the input doesn't match our regular expression
+  if(!re.test(url)) {
+    alert("Error: Input a valid playlist URL");
+    return false;
+  }
+  getConfirmation()
+}
+
+function verifyRelaxURL(){
+  var url = (document.getElementById("relax-url").value);
+  isProd = false;
+  isRelax = true;
   // validation fails if the input is blank
   if(url == "") {
     alert("Error: Please enter a playlist URL!");
@@ -28,7 +54,14 @@ const myInit = { method: 'GET',
 
 
 function getConfirmation() {
-  var url = (document.getElementById("prod-url").value);
+  if (isProd == true) {
+    var url = (document.getElementById("prod-url").value);
+
+  }
+  else {
+    var url = (document.getElementById("relax-url").value);
+  }
+
   //url issues need to be addressed
   if (url.includes("spotify")) {
     token = url.split("playlist/")[1]
@@ -72,10 +105,13 @@ function getConfirmation() {
     // .then(response => console.log("Success", JSON.stringify(response)))
 
   }
+  if (isProd == true) {
+    var retVal = confirm("Is 'My Rad Study Beats' the correct playlist?");
+  }
+  else {
+    var retVal = confirm("Is 'My Rad Relax Beats' the correct playlist?");
+  }
 
-
-
-  var retVal = confirm("Is this the correct playlist?");
   if( retVal == true ) {
     return true;
   } else {
