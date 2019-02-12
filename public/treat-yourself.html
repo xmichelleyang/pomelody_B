@@ -22,20 +22,34 @@
 
             <button type="button" class="control_button" id="resume"> Resume </button>
 
-            <button onclick="verify_skip()" class="control_button"> Skip</button>
-
-            <button onclick="verify_stop()" class="control_button" >Stop</button>
-
+            <button onclick="skip_function()" class='control_button'>Skip</button>
             <script>
-            function verify_skip() {
-                alert("Are you sure you want to skip to the next session?");
+            function skip_function() {
+              var txt;
+              if (confirm("Are you sure you want to skip the session?")) {
+                txt = "You pressed OK!";
                 window.location.href = "you-can-do-it.html";
+              } 
+              else{
+                window.location.href = "treat-yourself.html";
+              }
+              document.getElementById("demo").innerHTML = txt;
             }
             </script>
+
+            <button onclick="stop_function()">Stop</button>
+
+            <p id="demo"></p>
+
             <script>
-            function verify_stop() {
-              alert("Are you sure you want to stop the current session?");
-              window.location.href = "end-page.html";
+            function stop_function() {
+              var txt;
+              if (confirm("Are you sure you want to stop the session?")) {
+                window.location.href = "end-page.html";
+              } else {
+                window.location.href = "treat-yourself.html";
+              }
+              document.getElementById("demo").innerHTML = txt;
             }
             </script>
             <div class="footer">
