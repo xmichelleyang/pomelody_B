@@ -15,7 +15,7 @@ function verifyURL(){
     alert("Error: Input a valid playlist URL");
     return false;
   }
-  getConfirmation()  
+  getConfirmation()
 }
 
 function getConfirmation() {
@@ -27,16 +27,14 @@ function getConfirmation() {
       token = token.split("?si=")[0]
     }
 
-    const spotifyapi = "https://api.spotify.com/v1/playlists/" + token
-    console.log(spotifyapi)
-    //
-    // fetch(spotifyapi)
-    //   .then(function(data) {
-    //     console.log(data)
-    //   })
-    //
-    //
-    // }
+    //const spotifyapi = "https://api.spotify.com/v1/playlists/" + token + "?access_token=2f9964261ca74125a9606e6f20734892"
+    //console.log(spotifyapi)
+
+    //fetch(spotifyapi)
+    //.then(function(data) {
+         //console.log(data)
+       })
+
   }
 
 
