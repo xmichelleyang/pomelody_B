@@ -1,8 +1,7 @@
+// Get all of our friend data
+var data = require('../data.json');
 
-/*
- * GET home page.
- */
-
-exports.view = function(req, res){
-  res.render('index');
+exports.view = function(request, response){
+	console.log(data);
+	response.render('index', data)
 };
