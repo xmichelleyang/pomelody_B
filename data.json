@@ -1,16 +1,6 @@
 {
-  "sessions": [
-    {
-      "workURL": "https://soundcloud.com/lelias-2/sets/happy-lofi",
+      "prodURL": "https://soundcloud.com/lelias-2/sets/happy-lofi",
       "workTime": "20",
       "relaxURL": "https://open.spotify.com/playlist/6aXu6ubqgUi5a5KUzoalIm",
       "relaxTime": "15"
-    },
-    {
-      "workURL": "",
-      "workTime": "",
-      "relaxURL": "",
-      "relaxTime": ""
-    }
-  ]
 }
