@@ -13,7 +13,6 @@ var data = require('./routes/data');
 var render = require('./routes/render');
 
 
->>>>>>> af9416fefad8a49ff8fabbc80cf522e4d786a7ad
 // Example route
 // var user = require('./routes/user');
 
