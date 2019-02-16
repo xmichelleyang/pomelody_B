@@ -1,27 +1,31 @@
 var isProd = false;
 var isRelax = true;
 
-function init() {
- loadJSON(function(response) {
-  // Parse JSON string into object
-    var actual_JSON = JSON.parse(response);
- });
-}
+// function init() {
+//  loadJSON(function(response) {
+//   // Parse JSON string into object
+//     var actual_JSON = JSON.parse(response);
+//  });
+// // }
  
-function loadJSON(callback) {   
+// function loadJSON(callback) {   
 
-    var xobj = new XMLHttpRequest();
-        xobj.overrideMimeType("application/json");
-    xobj.open('GET', 'data.json', true); 
-    xobj.onreadystatechange = function () {
-          if (xobj.readyState == 4 && xobj.status == "200") {
-            callback(xobj.responseText);
-          }
-    };
-    xobj.send(null);  
- }
+//     var xobj = new XMLHttpRequest();
+//         xobj.overrideMimeType("application/json");
+//     xobj.open('GET', 'data.json', true); 
+//     xobj.onreadystatechange = function () {
+//           if (xobj.readyState == 4 && xobj.status == "200") {
+//             callback(xobj.responseText);
+//           }
+//     };
+//     xobj.send(null);  
+//  }
  
 function verifyProdURL(){
+
+  $.get("/data/"+idNumber, callback);
+
+
   var url = (document.getElementById("prod-url").value);
   isProd = true;
   isRelax = false;
