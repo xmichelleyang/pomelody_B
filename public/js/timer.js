@@ -28,10 +28,10 @@ var CountDown = (function ($) {
 
                 // // Dynamically switch between pages
                 if(whichPage() == "relax") {
-                  window.location = '../public/treat-yourself.html'
+                  window.location = '../treat-yourself.html'
                 }
                 else {
-                  window.location = '../public/you-can-do-it.html'
+                  window.location = '../you-can-do-it.html'
                 }
             }
         }
