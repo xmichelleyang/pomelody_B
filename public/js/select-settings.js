@@ -21,9 +21,13 @@ var isRelax = true;
 //     xobj.send(null);  
 //  }
  
+function callback(result){
+  $("#main-content").append(result['prodURL']);
+}
+
 function verifyProdURL(){
 
-  $.get("/data/"+idNumber, callback);
+  $.get("/data/", callback);
 
 
   var url = (document.getElementById("prod-url").value);
