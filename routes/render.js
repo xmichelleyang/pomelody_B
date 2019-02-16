@@ -12,8 +12,9 @@ exports.viewWelcome = function(request, response){
 };
 
 exports.viewPrevSettings = function(request, response){
+	var data = require('../data.json');
 	console.log("hi im working uwu");
-	response.render('prev-settings'); //correct name?
+	response.render('prev-settings', data); 
 };
 
 exports.viewSelectProd = function(request, response){

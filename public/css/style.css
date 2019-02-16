@@ -80,3 +80,7 @@ h1,h2 {
 .enter_button { 
 	margin-top: 15px;
  }
+
+ #prevSettingsInfo p{
+ 	padding-top: 5px;
+ }

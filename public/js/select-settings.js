@@ -1,33 +1,15 @@
 var isProd = false;
 var isRelax = true;
 
-// function init() {
-//  loadJSON(function(response) {
-//   // Parse JSON string into object
-//     var actual_JSON = JSON.parse(response);
-//  });
-// // }
+// Example of how to use a GET request for data
  
-// function loadJSON(callback) {   
-
-//     var xobj = new XMLHttpRequest();
-//         xobj.overrideMimeType("application/json");
-//     xobj.open('GET', 'data.json', true); 
-//     xobj.onreadystatechange = function () {
-//           if (xobj.readyState == 4 && xobj.status == "200") {
-//             callback(xobj.responseText);
-//           }
-//     };
-//     xobj.send(null);  
-//  }
- 
-function callback(result){
-  $("#main-content").append(result['prodURL']);
-}
+// function callback(result){
+//   $("#main-content").append(result['prodURL']);
+// }
 
 function verifyProdURL(){
 
-  $.get("/data/", callback);
+  //$.get("/data/", callback);
 
 
   var url = (document.getElementById("prod-url").value);
