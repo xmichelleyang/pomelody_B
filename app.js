@@ -10,6 +10,10 @@ var handlebars = require('express3-handlebars')
 
 var index = require('./routes/index');
 var data = require('./routes/data');
+var render = require('./routes/render');
+
+
+>>>>>>> af9416fefad8a49ff8fabbc80cf522e4d786a7ad
 // Example route
 // var user = require('./routes/user');
 
@@ -37,8 +41,18 @@ if ('development' == app.get('env')) {
 
 //app.get('/', index.view);
 // Example route
-app.get('/', index.view);
-app.get('/data', data.dataInfo)
+app.get('/', render.viewLogin);
+app.get('/welcome', render.viewWelcome);
+app.get('/prev-settings', render.viewPrevSettings);
+app.get('/select-productivity', render.viewSelectProd);
+app.get('/select-interval-of-time-prod', render.viewSelectIntervalProd);
+app.get('/select-relaxation', render.viewSelectRelax);
+app.get('/select-interval-of-time-relax', render.viewSelectIntervalRelax);
+app.get('/select-interval-of-time', render.viewSelectInterval);
+app.get('/you-can-do-it', render.viewYouCan);
+app.get('/treat-yourself', render.viewTreatYourself);
+app.get('/end', render.viewEnd);
+
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
