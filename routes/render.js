@@ -51,6 +51,10 @@ exports.viewTreatYourself = function(request, response){
 	console.log("hi im working uwu");
 	response.render('treat-yourself');
 };
+exports.viewHelpScreen = function(request, response){
+	console.log("hi im working uwu");
+	response.render('help-screen');
+};
 
 exports.viewEnd = function(request, response){
 	console.log("hi im working uwu");
