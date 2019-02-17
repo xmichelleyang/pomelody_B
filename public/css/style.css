@@ -45,6 +45,14 @@ input.url-input {
 	text-align: center;
 }
 
+.back-button {
+     margin-top: 1px;
+     margin-right: 2px;
+     position:absolute;
+     top:0;
+     left:0;
+ }
+
 .footer {
 	position: fixed;
 	left: 0;
