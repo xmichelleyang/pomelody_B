@@ -12,9 +12,8 @@ exports.viewWelcome = function(request, response){
 };
 
 exports.viewPrevSettings = function(request, response){
-	var data = require('../data.json');
 	console.log("hi im working uwu");
-	response.render('prev-settings', data); 
+	response.render('prev-settings'); 
 };
 
 exports.viewSelectProd = function(request, response){
@@ -44,12 +43,13 @@ exports.viewSelectInterval = function(request, response){
 
 exports.viewYouCan = function(request, response){
 	console.log("hi im working uwu");
-	response.render('you-can-do-it');
+	response.render('you-can-do-it', data);
 };
 
 exports.viewTreatYourself = function(request, response){
+
 	console.log("hi im working uwu");
-	response.render('treat-yourself');
+	response.render('treat-yourself', data);
 };
 exports.viewHelpScreen = function(request, response){
 	console.log("hi im working uwu");
@@ -60,3 +60,4 @@ exports.viewEnd = function(request, response){
 	console.log("hi im working uwu");
 	response.render('end-page');
 };
+

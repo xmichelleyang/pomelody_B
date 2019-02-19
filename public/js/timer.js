@@ -1,3 +1,39 @@
+'use strict';
+
+// Call this function when the page loads (the "ready" event)
+$(document).ready(function() {
+    initializePage();
+})
+
+/*
+ * Function that is called when the document is ready.
+ */
+function initializePage() {
+    // Get the correct amount of time    
+    var relaxTime = 0;
+    var prodTime = 0;
+
+    var data = $.get("/data", function(result){
+        console.log(result);
+        relaxTime = result['relaxTime'] 
+        prodTime = result['workTime']
+
+        if (whichPage() == "relax"){
+            CountDown.Start(relaxTime * 60000 + 1000);
+        }
+        else {
+            CountDown.Start(prodTime * 60000 + 1000);
+        }
+    })
+}
+
+
+// function callback(result){
+//     relaxTime = result['relaxTime']
+//     prodTime = result['workTime']
+// }
+
+
 // Majority of timer code taken from: http://jsfiddle.net/rnQ2W/2/
 var CountDown = (function ($) {
     // Length ms 
@@ -101,7 +137,8 @@ $("#resume").click(function () {
 
 // This is where you select the start and end time. Minute * 60,000
 // ms
-CountDown.Start(0.1 * 60000);
+
+
 
 function whichPage(){
   if ((document.URL).includes("you-can-do-it.html"))  {

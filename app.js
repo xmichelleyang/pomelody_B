@@ -52,6 +52,7 @@ app.get('/select-interval-of-time', render.viewSelectInterval);
 app.get('/you-can-do-it', render.viewYouCan);
 app.get('/treat-yourself', render.viewTreatYourself);
 app.get('/end', render.viewEnd);
+app.get('/data', data.dataInfo);
 
 
 http.createServer(app).listen(app.get('port'), function(){
