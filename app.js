@@ -40,6 +40,7 @@ if ('development' == app.get('env')) {
 //app.get('/', index.view);
 // Example route
 app.get('/', render.viewLogin);
+app.get('/login', render.viewLogin)
 app.get('/welcome', render.viewWelcome);
 app.get('/help-screen',render.viewHelpScreen);
 app.get('/prev-settings', render.viewPrevSettings);
@@ -57,5 +58,3 @@ app.get('/data', data.dataInfo);
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
-
-
