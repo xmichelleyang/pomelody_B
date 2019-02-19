@@ -44,7 +44,11 @@ input.url-input {
 .time-button {
 	text-align: center;
 }
-
+.header {
+	margin: 20px;
+	margin-top: 40px;
+	text-align: center;	
+}
 .back-button {
      margin-top: 1px;
      margin-right: 2px;
@@ -61,12 +65,30 @@ input.url-input {
 	height: 5;
 	text-align: right;
 
+	border-style: solid;
 }
-.header {
+
+.centered-footer {
+
+
+
+	border-style: solid;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	border-spacing: 0px;
+
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 5;
+}
+.centered-footer button {
 	margin: 20px;
-	margin-top: 40px;
-	text-align: center;	
 }
+
 .footer button {
 	margin: 20px;
 }
@@ -100,3 +122,4 @@ h1,h2 {
 	justify-content: center;
 	border-spacing: 0px;
 }
+
