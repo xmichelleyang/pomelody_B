@@ -1,6 +1,3 @@
-var isProd = false;
-var isRelax = true;
-
 // Example of how to use a GET request for data
  
 // function callback(result){
@@ -66,10 +63,14 @@ function getConfirmation() {
 
   if (isProd == true) {
     var url = (document.getElementById("prod-url").value);
+    localStorage.setItem('prod_url', url)
+
     prod_url = url;
   }
   else {
     var url = (document.getElementById("relax-url").value);
+    localStorage.setItem('relax_url', url)
+
     relax_url = url;
   }
 
@@ -151,36 +152,40 @@ const handleProdSubmit = event => {
   // ...this is where we’d actually do something with the form data...
 };
 
-var prod_time = 0;
-var relax_time = 0;
-var prod_url = "";
-var relax_url = "";
-var prodName = "";
-var relaxName = "";
 
 
 function genJSON(){
+  var prod_url = localStorage.getItem('prod_url');
+  var prodName = "";
+  var prod_time = localStorage.getItem('prod_time');
+  var relax_url = localStorage.getItem('relax_url');
+  var relaxName = "";
+  var relax_time = localStorage.getItem('relax_time');
   var dict = {
     "prodURL": prod_url,
     "prodName": prodName,
-    "workTime": prod_time,
+    "prodTime": prod_time,
     "relaxURL": relax_url,
     "relaxName": relaxName,
     "relaxTime": relax_time,
   };
+
   console.log(dict);
-
+  // var obj = JSON.parse(dict);
+  // console.log(obj);
 }
 
-function updateProdSelectedVal(val){
-  prod_time = val
+function updateProdTimeVal(val){
+  localStorage.setItem('prod_time', val);
+  prod_time = val;
 }
 
 
-function updateRelaxSelectedVal(val){
-  relax_time = val
+function updateRelaxTimeVal(val){
+  localStorage.setItem('relax_time', val);
+  console.log(localStorage.getItem('relax_time'));
+  relax_time = val;
 }
-
 
 // Stop form from appending onto URL
 $("form").submit(function() { return false; });

@@ -16,7 +16,7 @@ function initializePage() {
     var data = $.get("/data", function(result){
         console.log(result);
         relaxTime = result['relaxTime'] 
-        prodTime = result['workTime']
+        prodTime = result['prdTime']
 
         if (whichPage() == "relax"){
             CountDown.Start(relaxTime * 60000 + 1000);
