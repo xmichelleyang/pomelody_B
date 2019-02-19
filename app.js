@@ -6,10 +6,14 @@ var express = require('express');
 var http = require('http');
 var path = require('path');
 var handlebars = require('express3-handlebars')
+// var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var data = require('./routes/data');
 var render = require('./routes/render');
+var saveJSON = require('./routes/saveJSON');
+
+
 
 
 // Example route
@@ -31,6 +35,7 @@ app.use(express.cookieParser('IxD secret key'));
 app.use(express.session());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.bodyParser());
 
 // development only
 if ('development' == app.get('env')) {
@@ -53,6 +58,7 @@ app.get('/you-can-do-it', render.viewYouCan);
 app.get('/treat-yourself', render.viewTreatYourself);
 app.get('/end', render.viewEnd);
 app.get('/data', data.dataInfo);
+app.post('/saveJSON', saveJSON.saveJSON);
 
 
 http.createServer(app).listen(app.get('port'), function(){
