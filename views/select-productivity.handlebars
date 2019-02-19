@@ -30,7 +30,7 @@
                 <h4> Select Playlist URL: </h4>
                 <form id="productivity-form">
                   <input type="text" class="url-input" id="prod-url">
-                    <button type="button" onclick="verifyProdURL()" value = "Confirm" > Confirm </button>
+                    <button type="button" onclick="verifyProdURL()" value ="Confirm" id="confirmBtn"> Confirm </button>
                 
                     <h4> Select Time Interval: </h4>
                     <div class="center-container">
@@ -64,14 +64,29 @@
         <div class = "header">
             <div class="back-button"> <!-- <a href="welcome-to-pomelody.html"> --> <button type="button"> Back </button> <!-- </a> --> </div>
         </div>
-      <script type="text/javascript" src="js/select-settings.js"></script>
-      <script type="text/javascript">
 
-       $(".dropdown-menu li a").click(function(){
-          $(this).parents(".dropdown").find('.btn').html($(this).text() + ' <span class="caret"></span>');
-          $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
+
+        <script type="text/javascript" src="js/select-settings.js"></script>
+
+        <script type="text/javascript">
+
+        // For Dropdown Menu to Change upon selection
+        $(".dropdown-menu li a").click(function(){
+            // Selected Drop down value
+            var selected_value = $(this).data('value')
+            $(this).parents(".dropdown").find('.btn').html($(this).text() + ' <span class="caret"></span>');
+            $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
         });
-              
+
+        // Pressing Enter should press button
+
+        var input = document.getElementById("prod-url");
+        input.addEventListener("keyup", function(event) {
+          if (event.keyCode === 13) {
+           event.preventDefault();
+           document.getElementById("confirmBtn").click();
+          }
+        });
         </script>
 
     </body>

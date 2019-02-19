@@ -64,12 +64,15 @@ const myInit = { method: 'GET',
 
 
 function getConfirmation() {
+
   if (isProd == true) {
     var url = (document.getElementById("prod-url").value);
+    // TODO Save into JSON
 
   }
   else {
     var url = (document.getElementById("relax-url").value);
+    // TODO Save into JSON
   }
 
   //url issues need to be addressed
@@ -131,3 +134,30 @@ function getConfirmation() {
 }
 
 
+const handleProdSubmit = event => {  
+  // Stop the form from submitting since we’re handling that with AJAX.
+  event.preventDefault();
+  console.log("Insidehandle prod submit")
+  
+  // TODO: Call our function to get the form data.
+  const data = {};
+  
+  // Demo only: print the form data onscreen as a formatted JSON object.
+  const dataContainer = document.getElementById("productivity-form")[0];
+  
+  // Use `JSON.stringify()` to make the output valid, human-readable JSON.
+  dataContainer.textContent = JSON.stringify(data, null, "  ");
+
+  console.log(dataContainer)
+  
+  // ...this is where we’d actually do something with the form data...
+};
+
+function onSubmit( form ){
+  return false; //don't submit
+}
+
+console.log("hello")
+var form = document.getElementById("productivity-form")[0];
+console.log(form)
+form.addEventListener('submit', handleProdSubmit);
