@@ -56,11 +56,9 @@
             <div class="back-button"><a href="select-productivity.html"> <button type="button"> Back </button> </a> </div>
 
         <div class="centered-footer"> 
-            <a href="you-can-do-it.html"> <button type="button"> Start </button> </a> 
+            <a href="you-can-do-it.html"> <button type="button" onclick="genJSON()"> Start </button> </a> 
         </div> 
         
-
-
         <script type="text/javascript" src="js/select-settings.js"></script>
 
         <script type="text/javascript">
@@ -68,12 +66,14 @@
         $(".dropdown-menu li a").click(function(){
             // Selected Drop down value
             var selected_value = $(this).data('value')
+            updateRelaxTimeVal(selected_value);
+
             $(this).parents(".dropdown").find('.btn').html($(this).text() + ' <span class="caret"></span>');
             $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
         });
 
         // Pressing Enter should press button
-        var input = document.getElementById("prod-url");
+        var input = document.getElementById("relax-url");
         input.addEventListener("keyup", function(event) {
           if (event.keyCode === 13) {
            event.preventDefault();
