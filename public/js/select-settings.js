@@ -171,8 +171,23 @@ function genJSON(){
   };
 
   console.log(dict);
-  // var obj = JSON.parse(dict);
-  // console.log(obj);
+  var obj = JSON.stringify(dict);
+  console.log(obj);
+
+  obj = JSON.parse(obj);
+  console.log(obj);
+
+
+  // var fs = require("fs");
+  // fs.writeFile("./test.json", JSON.stringify(dict), (err) => {
+  //     if (err) {
+  //         console.error(err);
+  //         return;
+  //     };
+  //     console.log("File has been created");
+  // });
+
+
 }
 
 function updateProdTimeVal(val){
