@@ -62,17 +62,15 @@ const myInit = { method: 'GET',
                mode: 'cors',
                cache: 'default' };
 
-
 function getConfirmation() {
 
   if (isProd == true) {
     var url = (document.getElementById("prod-url").value);
-    // TODO Save into JSON
-
+    prod_url = url;
   }
   else {
     var url = (document.getElementById("relax-url").value);
-    // TODO Save into JSON
+    relax_url = url;
   }
 
   //url issues need to be addressed
@@ -153,11 +151,36 @@ const handleProdSubmit = event => {
   // ...this is where we’d actually do something with the form data...
 };
 
-function onSubmit( form ){
-  return false; //don't submit
+var prod_time = 0;
+var relax_time = 0;
+var prod_url = "";
+var relax_url = "";
+var prodName = "";
+var relaxName = "";
+
+
+function genJSON(){
+  var dict = {
+    "prodURL": prod_url,
+    "prodName": prodName,
+    "workTime": prod_time,
+    "relaxURL": relax_url,
+    "relaxName": relaxName,
+    "relaxTime": relax_time,
+  };
+  console.log(dict);
+
 }
 
-console.log("hello")
-var form = document.getElementById("productivity-form")[0];
-console.log(form)
-form.addEventListener('submit', handleProdSubmit);
+function updateProdSelectedVal(val){
+  prod_time = val
+}
+
+
+function updateRelaxSelectedVal(val){
+  relax_time = val
+}
+
+
+// Stop form from appending onto URL
+$("form").submit(function() { return false; });

@@ -51,7 +51,7 @@
         </div>
         
         <div class="footer">
-            <div class="alignright"> <!-- <a href="select-relaxation.html"> --> <button type="button" onclick="onSubmit()"> Next </button> <!-- </a> --> </div>
+            <div class="alignright"> <!-- <a href="select-relaxation.html"> --> <button type="button"> Next </button> <!-- </a> --> </div>
         </div>
 
         <div class = "header">
@@ -67,9 +67,12 @@
         $(".dropdown-menu li a").click(function(){
             // Selected Drop down value
             var selected_value = $(this).data('value')
+            updateProdTimeVal(selected_value);
+
             $(this).parents(".dropdown").find('.btn').html($(this).text() + ' <span class="caret"></span>');
             $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
         });
+
 
         // Pressing Enter should press button
         var input = document.getElementById("prod-url");
@@ -79,6 +82,7 @@
            document.getElementById("confirmBtn").click();
           }
         });
+
         </script>
 
     </body>

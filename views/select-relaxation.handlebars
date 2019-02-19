@@ -30,7 +30,7 @@
 
                 <form>
                   <input type="text" name="relax-url" class="url-input" id="relax-url">
-                  <button type="button" onclick="verifyRelaxURL()" value = "Confirm" > Confirm </button>
+                  <button type="button" onclick="verifyRelaxURL()" value = "Confirm" id="confirmBtn"> Confirm </button>
                 </form>
 
                 <h4> Select Time Interval: </h4>
@@ -56,7 +56,7 @@
             <div class="back-button"><a href="select-productivity.html"> <button type="button"> Back </button> </a> </div>
 
         <div class="centered-footer"> 
-            <a href="you-can-do-it.html"> <button type="button" onclick="genJSON()"> Start </button> </a> 
+            <!-- <a href="you-can-do-it.html">--> <button type="button" onclick="genJSON()"> Start </button> <!-- </a> -->
         </div> 
         
         <script type="text/javascript" src="js/select-settings.js"></script>
@@ -80,6 +80,8 @@
            document.getElementById("confirmBtn").click();
           }
         });
+
+         $("form").submit(function() { return false; });
         </script>
 
     </body>
