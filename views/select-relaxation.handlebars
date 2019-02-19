@@ -7,8 +7,16 @@
 
         <title> Pomelody </title>
 
+        <!-- Our  CSS -->
         <link href="css/style.css" rel="stylesheet">
+        <!-- Makes Website  Responsive -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
     </head>
 
 
@@ -26,19 +34,51 @@
                 </form>
 
                 <h4> Select Time Interval: </h4>
-                <div class="center-container">
-                    <a href="select-interval-of-time-relax.html"> <button type="button" class="time-button" > 10 min </button> </a>
+                <div class="dropdown">
+                  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    0 min
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li><a href="#" data-value="5min">5 min </a></li>
+                    <li><a href="#" data-value="10min">10 min </a></li>
+                    <li><a href="#" data-value="15min">15 min </a></li>
+                    <li><a href="#" data-value="20min">20 min </a></li>
+                    <li><a href="#" data-value="25min">25 min </a></li>
+                    <li><a href="#" data-value="30min">30 min </a></li>
+                    <li><a href="#" data-value="pom">POMODORO</a></li>
+                    <li><a href="#" data-value="custom">Custom</a></li>
+                  </ul>
                 </div>
             </div>
         </div>
         <div class="header">
             <div class="back-button"><a href="select-productivity.html"> <button type="button"> Back </button> </a> </div>
 
-      <div class="footer"><a href="you-can-do-it.html"> <button type="button"> Next </button> </a> </div>
+        <div class="footer"><a href="you-can-do-it.html"> <button type="button"> Next </button> </a> </div>
         </div>
 
-     
-      <script type="text/javascript" src="js/select-settings.js"></script>
+
+        <script type="text/javascript" src="js/select-settings.js"></script>
+
+        <script type="text/javascript">
+        // For Dropdown Menu to Change upon selection
+        $(".dropdown-menu li a").click(function(){
+            // Selected Drop down value
+            var selected_value = $(this).data('value')
+            $(this).parents(".dropdown").find('.btn').html($(this).text() + ' <span class="caret"></span>');
+            $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
+        });
+
+        // Pressing Enter should press button
+        var input = document.getElementById("prod-url");
+        input.addEventListener("keyup", function(event) {
+          if (event.keyCode === 13) {
+           event.preventDefault();
+           document.getElementById("confirmBtn").click();
+          }
+        });
+        </script>
 
     </body>
 </html>
