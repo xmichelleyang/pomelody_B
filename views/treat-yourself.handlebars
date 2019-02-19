@@ -13,6 +13,11 @@
 
 
     <body>
+        <audio id="myAudio">
+          <source src="sounds/success-sound.mp3" type="audio/mpeg">
+        </audio>
+
+
         <h1 class="header" id="status"> Treat Yourself! </h1>
 
         <div class="center-container" id="main-content">
@@ -39,7 +44,7 @@
 
             <script>
             function stop_function() {
-              var txt;
+
               if (confirm("Are you sure you want to stop the session?")) {
                 window.location.href = "end-page.html";
               }

@@ -23,15 +23,21 @@ var CountDown = (function ($) {
         if( Running ) {
             CurrentTime += TimeGap;
             // When the timer is DONE
+            if(CurrentTime + 1020 >= EndTime  ){
+                console.log("I'm ready!");
+                playAudio();
+                setTimeout(1000);
+            }
             if( CurrentTime >= EndTime ) {
                 GuiTimer.css('color','red');
-
                 // // Dynamically switch between pages
                 if(whichPage() == "relax") {
-                  window.location = '../treat-yourself.html'
+                    window.location = '../treat-yourself.html'
+                  
                 }
                 else {
-                  window.location = '../you-can-do-it.html'
+                    
+                    window.location = '../you-can-do-it.html'
                 }
             }
         }
@@ -45,6 +51,12 @@ var CountDown = (function ($) {
             (Minutes < 10 ? '0' : '') + Minutes 
             + ':' 
             + (Seconds < 10 ? '0' : '') + Seconds );
+
+        function playAudio(){
+            var x = new Audio("success-sound.mp3") 
+            x.play();
+            console.log("TRying to play sound")
+        }
     };
     
     var Pause = function() {
