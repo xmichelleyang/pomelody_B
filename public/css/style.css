@@ -92,3 +92,11 @@ h1,h2 {
  #prevSettingsInfo p{
  	padding-top: 5px;
  }
+
+.dropdown ul li{
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	border-spacing: 0px;
+}
