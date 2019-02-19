@@ -161,6 +161,7 @@ function genJSON(){
   var relax_url = localStorage.getItem('relax_url');
   var relaxName = "";
   var relax_time = localStorage.getItem('relax_time');
+
   var dict = {
     "prodURL": prod_url,
     "prodName": prodName,
@@ -171,21 +172,15 @@ function genJSON(){
   };
 
   console.log(dict);
-  var obj = JSON.stringify(dict);
-  console.log(obj);
+  // var obj = JSON.stringify(dict);
+  // console.log(obj);
 
-  obj = JSON.parse(obj);
-  console.log(obj);
+  // obj = JSON.parse(obj);
+  // console.log(obj);
 
-
-  // var fs = require("fs");
-  // fs.writeFile("./test.json", JSON.stringify(dict), (err) => {
-  //     if (err) {
-  //         console.error(err);
-  //         return;
-  //     };
-  //     console.log("File has been created");
-  // });
+  $.post('/saveJSON', dict, function(data, status){
+    console.log(`${data} and status ${status}`);
+  });
 
 
 }
