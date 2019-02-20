@@ -14,15 +14,12 @@ function initializePage() {
     var prodTime = 0;
 
     var data = $.get("/data", function(result){
-        console.log(result);
         relaxTime = result['relaxTime'];
         prodTime = result['prodTime'];
-        console.log("Current page is " + whichPage());
         if (whichPage() == "relax"){
             CountDown.Start(relaxTime * 60000 + 1000);
         }
         else {
-            console.log("About to start with ", prodTime);
             CountDown.Start(prodTime * 60000 + 1000);
         }
     })
@@ -61,7 +58,6 @@ var CountDown = (function ($) {
             CurrentTime += TimeGap;
             // When the timer is DONE
             if(CurrentTime + 1020 >= EndTime  ){
-                console.log("I'm ready!");
                 playAudio();
                 setTimeout(1000);
             }
