@@ -3,6 +3,9 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	top: 0px;
+	left: 0px;
+
 }
 
 #main-content{
@@ -120,3 +123,8 @@ h1,h2 {
 .prev-info {
 	display: inline;
 }
+
+.wide_header {
+	display: flex
+}
+
