@@ -47,7 +47,6 @@ exports.viewYouCan = function(request, response){
 };
 
 exports.viewTreatYourself = function(request, response){
-
 	console.log("hi im working uwu");
 	response.render('treat-yourself', data);
 };

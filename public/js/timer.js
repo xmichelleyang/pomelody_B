@@ -15,13 +15,14 @@ function initializePage() {
 
     var data = $.get("/data", function(result){
         console.log(result);
-        relaxTime = result['relaxTime'] 
-        prodTime = result['prdTime']
-
+        relaxTime = result['relaxTime'];
+        prodTime = result['prodTime'];
+        console.log("Current page is " + whichPage());
         if (whichPage() == "relax"){
             CountDown.Start(relaxTime * 60000 + 1000);
         }
         else {
+            console.log("About to start with ", prodTime);
             CountDown.Start(prodTime * 60000 + 1000);
         }
     })
@@ -141,7 +142,7 @@ $("#resume").click(function () {
 
 
 function whichPage(){
-  if ((document.URL).includes("you-can-do-it.html"))  {
+  if ((document.URL).includes("you-can-do-it"))  {
     return "relax"
   }
   else {
