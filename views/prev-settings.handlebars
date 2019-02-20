@@ -8,6 +8,7 @@
 
         <link href="css/style.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://unpkg.com/ionicons@4.4.4/dist/ionicons.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
 
@@ -18,10 +19,18 @@
         <div class="center-container" id="main-content">
             <h1> Previous Settings</h1>
             <div id="prevSettingsInfo">
-                 <p><b> Productivity Playlist: </b> {{prodName}}<br> </p>
-                 <p><b> Productivity Time Interval: </b> {{prodTime}}<br> </p>
-                 <p><b> Relaxation Playlist: </b> {{relaxName}}<br> </p>
-                 <p><b> Relaxation Time Interval: </b> {{relaxTime}}<br> </p>
+                 <p><b> Productivity Playlist: </b> <div class="prev-info" id="prodNameInfo"> {{prodName}} </div> <ion-icon name="create" onclick="editProdPlaylist()"></ion-icon> <br> </p>
+
+
+                 <p><b> Productivity Time Interval: </b> <div class="prev-info" id="prodTimeInfo"> {{prodTime}} </div> <ion-icon name="create" onclick="editProdTime()"></ion-icon> <br> </p>
+
+
+                 <p><b> Relaxation Playlist: </b> <div class="prev-info" id="relaxNameInfo"> {{relaxName}} </div> <ion-icon name="create" onclick="editRelaxPlaylist()"></ion-icon> <br> </p>
+
+
+                 <p><b> Relaxation Time Interval: </b> <div class="prev-info" id="relaxTimeInfo"> {{relaxTime}} </div> <ion-icon name="create" onclick="editRelaxTime()"></ion-icon> <br> </p>
+
+
 
             </div>
 
@@ -29,9 +38,11 @@
 
         <div class="footer">
             <div class="alignleft"><a href="welcome"> <button type="button"> Back </button> </a> </div>
-            <div class="alignright"><a href="you-can-do-it"> <button type="button"> Start with these settings </button> </a> </div>
+            <div class="alignright"><!--<a href="you-can-do-it"> --><button type="button" onclick="genJSON()"> Start with these settings </button><!-- </a> --></div>
         </div>
 
+        <script type="text/javascript" src="js/select-settings.js"></script>
+        <script type="text/javascript" src="js/prev-settings.js"></script>
 
     </body>
 </html>

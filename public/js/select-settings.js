@@ -5,13 +5,11 @@
 // }
 
 function verifyProdURL(){
-
   //$.get("/data/", callback);
 
-
   var url = (document.getElementById("prod-url").value);
-  isProd = true;
-  isRelax = false;
+  // isProd = true;
+  // isRelax = false;
   // validation fails if the input is blank
   if(url == "") {
     alert("Error: Please enter a playlist URL!");
@@ -26,13 +24,14 @@ function verifyProdURL(){
     alert("Error: Input a valid playlist URL");
     return false;
   }
-  getConfirmation()
+  getConfirmation(url, "prod");
 }
+
 
 function verifyRelaxURL(){
   var url = (document.getElementById("relax-url").value);
-  isProd = false;
-  isRelax = true;
+  // isProd = false;
+  // isRelax = true;
   // validation fails if the input is blank
   if(url == "") {
     alert("Error: Please enter a playlist URL!");
@@ -47,7 +46,30 @@ function verifyRelaxURL(){
     alert("Error: Input a valid playlist URL");
     return false;
   }
-  getConfirmation()
+  getConfirmation(url, "relax");
+}
+
+
+function verifyURL(input, type){
+
+  //$.get("/data/", callback);
+
+  var url = input;
+  // validation fails if the input is blank
+  if(url == "") {
+    alert("Error: Please enter a playlist URL!");
+    return false;
+  }
+
+  // regular expression to match only alphanumeric characters and spaces
+  var re = /^(http:|https:)\/\/.*$/m
+
+  // validation fails if the input doesn't match our regular expression
+  if(!re.test(url)) {
+    alert("Error: Input a valid playlist URL");
+    return false;
+  }
+  getConfirmation(url, type);
 }
 
 
@@ -59,20 +81,13 @@ const myInit = { method: 'GET',
                mode: 'cors',
                cache: 'default' };
 
-function getConfirmation() {
+function getConfirmation(url, type) {
 
-  if (isProd == true) {
-    var url = (document.getElementById("prod-url").value);
-    localStorage.setItem('prod_url', url)
-
-    prod_url = url;
+  // Type == Prod or Relax
+  if (type == undefined) {
+    type = whichPage()
   }
-  else {
-    var url = (document.getElementById("relax-url").value);
-    localStorage.setItem('relax_url', url)
 
-    relax_url = url;
-  }
 
   //url issues need to be addressed
   if (url.includes("spotify")) {
@@ -117,19 +132,38 @@ function getConfirmation() {
     // .then(response => console.log("Success", JSON.stringify(response)))
 
   }
-  if (isProd == true) {
-    var retVal = confirm("Is 'My Rad Study Beats' the correct playlist?");
+
+  // Ask user to confirm playlist //TODO: This can just be one confirm later with + name
+  var retVal = false;
+  if (type == "prod") {
+    retVal = confirm("Is 'My Rad Study Beats' the correct playlist?");
   }
   else {
-    var retVal = confirm("Is 'My Rad Relax Beats' the correct playlist?");
+    retVal = confirm("Is 'My Rad Relax Beats' the correct playlist?");
   }
 
-  if( retVal == true ) {
-    return true;
-  } else {
-    window.location.reload();
-    return false;
+  // If user says yes, update the value
+  if(retVal == true ) {
+    // Update the specific value 
+    if (type == "prod") {
+      localStorage.setItem('prod_url', url);
+      console.log("updated prod", url);
+
+    }
+    else if (type == "relax") {
+      localStorage.setItem('relax_url', url);
+      console.log("updated relax", url);
+    }
+
+    console.log("new JSON is", dict);
   }
+    
+
+
+  // } else {
+  //   window.location.reload();
+  //   return false;
+  // }
 }
 
 
@@ -199,3 +233,17 @@ function updateRelaxTimeVal(val){
 
 // Stop form from appending onto URL
 $("form").submit(function() { return false; });
+
+
+
+function whichPage(){
+  if ((document.URL).includes("you-can-do-it"))  {
+    return "relax"
+  }
+  else if ((document.URL).includes("treat-yourself")){
+    return "prod"
+  }
+  else {
+    return "prev"
+  }
+}

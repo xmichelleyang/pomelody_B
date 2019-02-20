@@ -117,3 +117,6 @@ h1,h2 {
 	border-spacing: 0px;
 }
 
+.prev-info {
+	display: inline;
+}
