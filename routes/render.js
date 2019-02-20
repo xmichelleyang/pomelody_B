@@ -13,7 +13,7 @@ exports.viewWelcome = function(request, response){
 
 exports.viewPrevSettings = function(request, response){
 	console.log("hi im working uwu");
-	response.render('prev-settings'); 
+	response.render('prev-settings', data); 
 };
 
 exports.viewSelectProd = function(request, response){
