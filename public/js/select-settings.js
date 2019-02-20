@@ -155,7 +155,6 @@ function getConfirmation(url, type) {
       console.log("updated relax", url);
     }
 
-    console.log("new JSON is", dict);
   }
     
 
@@ -206,11 +205,6 @@ function genJSON(){
   };
 
   console.log(dict);
-  // var obj = JSON.stringify(dict);
-  // console.log(obj);
-
-  // obj = JSON.parse(obj);
-  // console.log(obj);
 
   $.post('/saveJSON', dict, function(data, status){
     console.log(`${data} and status ${status}`);
