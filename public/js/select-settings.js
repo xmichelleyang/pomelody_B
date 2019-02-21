@@ -49,6 +49,18 @@ function verifyRelaxURL(){
   getConfirmation(url, "relax");
 }
 
+/*function validateNonEmptyPlaylist() {
+  console.log('I am inside validate form');
+  var x = document.getElementById("next").value;
+  console.log(password);
+  if (x == "") {
+    alert("Please enter a valid playlist URL.");
+    return false;
+  }
+  else { 
+    window.location.href = 'select-relaxation';
+  }
+}*/
 
 function verifyURL(input, type){
 
