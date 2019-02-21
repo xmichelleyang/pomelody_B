@@ -13,33 +13,35 @@
     </head>
 
 
-    <body>
-       <!-- <h1 class="header"> Welcome to Pomelody! </h1> -->
+    <body>  
+        <h1 class="header"> Previous Settings </h1>
 
         <div class="center-container" id="main-content">
-            <h1> Previous Settings</h1>
+
             <div id="prevSettingsInfo">
-                 <p><b> Productivity Playlist: </b> <div class="prev-info" id="prodNameInfo"> {{prodName}} </div> <ion-icon name="create" onclick="editProdPlaylist()"></ion-icon> <br> </p>
+                
+                    <b> Productivity Playlist: </b> <div class="prev-info" id="prodNameInfo"> {{prodName}} </div> <ion-icon name="create" onclick="editProdPlaylist()"></ion-icon> <br>
 
 
-                 <p><b> Productivity Time Interval: </b> <div class="prev-info" id="prodTimeInfo"> {{prodTime}} </div> <ion-icon name="create" onclick="editProdTime()"></ion-icon> <br> </p>
+                     <b> Productivity Time Interval: </b> <div class="prev-info" id="prodTimeInfo"> {{prodTime}} min </div> <ion-icon name="create" onclick="editProdTime()"></ion-icon> <br>
 
 
-                 <p><b> Relaxation Playlist: </b> <div class="prev-info" id="relaxNameInfo"> {{relaxName}} </div> <ion-icon name="create" onclick="editRelaxPlaylist()"></ion-icon> <br> </p>
+                     <b> Relaxation Playlist: </b> <div class="prev-info" id="relaxNameInfo"> {{relaxName}} </div> <ion-icon name="create" onclick="editRelaxPlaylist()"></ion-icon> <br>
 
 
-                 <p><b> Relaxation Time Interval: </b> <div class="prev-info" id="relaxTimeInfo"> {{relaxTime}} </div> <ion-icon name="create" onclick="editRelaxTime()"></ion-icon> <br> </p>
+                     <b> Relaxation Time Interval: </b> <div class="prev-info" id="relaxTimeInfo"> {{relaxTime}} min </div> <ion-icon name="create" onclick="editRelaxTime()"></ion-icon> <br>
 
 
 
             </div>
-
-        </div>
-
         <div class="footer">
             <div class="alignleft"><a href="welcome"> <button type="button"> Back </button> </a> </div>
             <div class="alignright"><button type="button" onclick="genJSON()"> Start with these settings </button></div>
         </div>
+
+        </div>
+
+        
 
         <script type="text/javascript" src="js/select-settings.js"></script>
         <script type="text/javascript" src="js/prev-settings.js"></script>

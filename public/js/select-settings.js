@@ -233,7 +233,7 @@ function updateProdTimeVal(val){
 
 function updateRelaxTimeVal(val){
   localStorage.setItem('relax_time', val);
-  console.log(localStorage.getItem('relax_time'));
+  console.log("Updated relax time to ", localStorage.getItem('relax_time'));
   relax_time = val;
 }
 

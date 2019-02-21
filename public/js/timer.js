@@ -14,6 +14,7 @@ function initializePage() {
     var prodTime = 0;
 
     var data = $.get("/data", function(result){
+        console.log(result);
         relaxTime = result['relaxTime'];
         prodTime = result['prodTime'];
         if (whichPage() == "relax"){

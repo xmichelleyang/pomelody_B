@@ -3,6 +3,9 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	top: 0px;
+	left: 0px;
+
 }
 
 #main-content{
@@ -47,15 +50,17 @@ input.url-input {
 .header {
 	margin: 20px;
 	margin-top: 40px;
-	text-align: center;	
+	text-align: center;
 }
-.back-button {
-     margin-top: 1px;
-     margin-right: 2px;
-     position:absolute;
-     top:0;
-     left:0;
- }
+
+.header_buttons{
+	display: flex;
+	flex-direction: row;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+}
+
 
 .footer {
 	position: fixed;
@@ -101,7 +106,7 @@ h1,h2 {
 .control_button {
 	margin-bottom: 15px;
 }
-.enter_button { 
+.enter_button {
 	margin-top: 15px;
  }
 
@@ -119,4 +124,8 @@ h1,h2 {
 
 .prev-info {
 	display: inline;
+}
+
+.wide_header {
+	display: flex
 }
