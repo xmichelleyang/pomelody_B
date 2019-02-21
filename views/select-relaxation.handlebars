@@ -63,34 +63,31 @@
 
         <script type="text/javascript">
         // For Dropdown Menu to Change upon selection
-        $(".dropdown-menu li a").click(function(){
+       $(".dropdown-menu li a").click(function(){
             // Selected Drop down value
             var selected_value = $(this).data('value')
 
             // If custom, prompt user to input
             if(selected_value == "custom") {
-                console.log("original value is ", localStorage.getItem('relax_time'))
+                console.log("original value is ", localStorage.getItem('relax_time'));
                 var response = prompt("Please enter your desired time");
-                // If user inputs invalid input
+                // If user presses cancel
+                if (response == null) {
+                    return;
+                }
+                // If user inputs invalid number
                 while (isNaN(response)) {
                     alert("Please enter a valid number");
                     response = prompt("Please enter your desired time");
                 }
-                // If user presses cancel
-                if (response == null) {
-                    response = localStorage.getItem('relax_time');
-                    console.log("fixing reposnse", response);
-                    selected_value = response
-                }
-                else {
-                    selected_value = response + ' min';
-                }
+                selected_value = response + ' min';
+                
             }
-            
             // Update JSON and button 
             updateRelaxTimeVal(selected_value);
             $(this).parents(".dropdown").find('.btn').html(selected_value + ' <span class="caret"></span>');
             $(this).parents(".dropdown").find('.btn').val(selected_value);
+                     
         });
 
         // Pressing Enter should press button
