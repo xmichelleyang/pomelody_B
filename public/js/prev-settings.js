@@ -20,8 +20,8 @@ function editProdTime(){
         change = prompt("Please enter your desired time");
     }
     // Update value on JSON and page
-	updateProdTimeVal(change + " min");
-	$('#prodTimeInfo').text(change);
+	updateProdTimeVal(change);
+	$('#prodTimeInfo').text(change + "min");
 }
 
 function editRelaxPlaylist(){
@@ -48,6 +48,6 @@ function editRelaxTime(){
     }
     // Update value on JSON and page
     console.log("changed value to ", change);
-	updateRelaxTimeVal(change + " min");
+	updateRelaxTimeVal(change);
 	$('#relaxTimeInfo').text(change + " min");
 }
