@@ -6,7 +6,13 @@ function editProdPlaylist(){
 
 function editProdTime(){
 	var change = prompt('What would you like to change your productivity time interval to?');
-	updateProdTimeVal(change);
+	// Verify its just a number 
+	while (isNaN(change)) {
+        alert("Please enter a valid numerical value");
+        change = prompt("Please enter your desired time");
+    }
+    // Update value on JSON and page
+	updateProdTimeVal(change + " min");
 	$('#prodTimeInfo').text(change);
 }
 
@@ -17,8 +23,13 @@ function editRelaxPlaylist(){
 }
 
 function editRelaxTime(){
-	var change = prompt('What would you like to change your relaxation playlist to?')
-	updateRelaxTimeVal(change);
-	console.log("Change time");
-	$('#relaxTimeInfo').text(change);
+	var change = prompt('What would you like to change your relaxation playlist to?');
+	// Verify its just a number 
+	while (isNaN(change)) {
+        alert("Please enter a valid numerical value");
+        change = prompt("Please enter your desired time");
+    }
+    // Update value on JSON and page
+	updateRelaxTimeVal(change + " min");
+	$('#relaxTimeInfo').text(change + " min");
 }
