@@ -8,6 +8,12 @@
 
 }
 
+ .line{
+width: 112px;
+height: 47px;
+position: relative;
+}
+
 #main-content{
 	height: 60%;
 	padding-right: 8%;
