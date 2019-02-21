@@ -75,12 +75,12 @@
                     alert("Please enter a valid number");
                     response = prompt("Please enter your desired time");
                 }
-                selected_value = response
+                selected_value = response + ' min';
             }
             
             // Update JSON and button 
             updateRelaxTimeVal(selected_value);
-            $(this).parents(".dropdown").find('.btn').html(selected_value + ' min' + ' <span class="caret"></span>');
+            $(this).parents(".dropdown").find('.btn').html(selected_value + ' <span class="caret"></span>');
             $(this).parents(".dropdown").find('.btn').val(selected_value);
         });
 
