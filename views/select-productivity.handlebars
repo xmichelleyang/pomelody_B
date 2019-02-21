@@ -41,12 +41,12 @@
                             <span class="caret"></span>
                           </button>
                           <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <li><a href="#" data-value="5 min">5 min </a></li>
-                            <li><a href="#" data-value="10 min">10 min </a></li>
-                            <li><a href="#" data-value="15 min">15 min </a></li>
-                            <li><a href="#" data-value="20 min">20 min </a></li>
-                            <li><a href="#" data-value="25 min">25 min </a></li>
-                            <li><a href="#" data-value="30 min">30 min </a></li>
+                            <li><a href="#" data-value="5">5 min </a></li>
+                            <li><a href="#" data-value="10">10 min </a></li>
+                            <li><a href="#" data-value="15">15 min </a></li>
+                            <li><a href="#" data-value="20">20 min </a></li>
+                            <li><a href="#" data-value="25">25 min </a></li>
+                            <li><a href="#" data-value="30">30 min </a></li>
                             <li><a href="#" data-value="custom">Custom</a></li>
                           </ul>
                         </div>
@@ -79,27 +79,24 @@
 
             // If custom, prompt user to input
             if(selected_value == "custom") {
-                console.log("original value is ", localStorage.getItem('relax_time'))
+                console.log("original value is ", localStorage.getItem('relax_time'));
                 var response = prompt("Please enter your desired time");
+                // If user presses cancel
+                if (response == null) {
+                    return;
+                }
                 // If user inputs invalid number
                 while (isNaN(response)) {
                     alert("Please enter a valid number");
                     response = prompt("Please enter your desired time");
                 }
-                // If user presses cancel
-                if (response == null) {
-                    response = localStorage.getItem('prod_time');
-                    console.log("fixing reposnse", response);
-                    selected_value = response
-                }
-                else {
-                    selected_value = response + ' min';
-                }
+                selected_value = response;
+
             }
 
             // Update JSON and button
             updateProdTimeVal(selected_value);
-            $(this).parents(".dropdown").find('.btn').html(selected_value + ' min' + ' <span class="caret"></span>');
+            $(this).parents(".dropdown").find('.btn').html(selected_value + ' min <span class="caret"></span>');
             $(this).parents(".dropdown").find('.btn').val(selected_value);
 
         });
