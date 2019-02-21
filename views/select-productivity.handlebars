@@ -63,14 +63,33 @@
 
         <script type="text/javascript">
 
+        function customTime(){
+            
+            updateProdTimeVal(selected_value);
+            $(this).parents(".dropdown").find('.btn').html(selected_value + ' <span class="caret"></span>');
+            $(this).parents(".dropdown").find('.btn').val(selected_value);
+        }
+
         // For Dropdown Menu to Change upon selection
         $(".dropdown-menu li a").click(function(){
             // Selected Drop down value
             var selected_value = $(this).data('value')
-            updateProdTimeVal(selected_value);
 
-            $(this).parents(".dropdown").find('.btn').html($(this).text() + ' <span class="caret"></span>');
-            $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
+            // If custom, prompt user to input
+            if(selected_value == "custom") {
+                var response = prompt("Please enter your desired time");
+                while (isNaN(response)) {
+                    alert("Please enter a valid number");
+                    response = prompt("Please enter your desired time");
+                }
+                selected_value = response
+            }
+            
+            // Update JSON and button 
+            updateProdTimeVal(selected_value);
+            $(this).parents(".dropdown").find('.btn').html(selected_value + ' min' + ' <span class="caret"></span>');
+            $(this).parents(".dropdown").find('.btn').val(selected_value);
+                     
         });
 
 

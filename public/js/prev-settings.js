@@ -7,7 +7,7 @@ function editProdPlaylist(){
 function editProdTime(){
 	var change = prompt('What would you like to change your productivity time interval to?');
 	updateProdTimeVal(change);
-	$('#prodTimeInfo').text = "343";
+	$('#prodTimeInfo').text(change);
 }
 
 function editRelaxPlaylist(){
