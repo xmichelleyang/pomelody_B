@@ -8,6 +8,12 @@
 
         <link href="css/style.css" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+        <script type="text/javascript" src="js/login-settings.js"></script>
+        {{> facebook}}
+        <script src="/js/facebook.js"></script>
+
     </head>
 
 
@@ -19,24 +25,35 @@
                     <h2> Username: </h2>
                     <form action="/action_page.php" method="post">
                       <input type="text" id="username" required>
-                     
+
                     </form>
 
                     <h2> Password: </h2>
                     <input type="password" ng-model="dataItem.password" class="form-control" name="password" placeholder="********" id="password" required/>
                 </form>
             <div class="enter_button">
-                <button type="submit" onclick= "validateForm()" id="enter-button"> Enter </button> 
+                <button type="submit" onclick= "validateForm()" id="enter-button"> Enter </button>
             </div>
         </div>
 
         <hr>
         <h2> Or Login With Facebook: </h2>
 
+        <div class="jumbotron">
+          <p class="facebookLogin">
+            Please login through Facebook
+            <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+            </fb:login-button>
+          </p>
+      </div>
+
         <script type="text/javascript">
+
+
 
         // Pressing Enter should press button
         var input = document.getElementById("password");
+        console.log("i go here");
         input.addEventListener("keyup", function(event) {
           if (event.keyCode === 13) {
            event.preventDefault();
@@ -45,7 +62,7 @@
         });
         </script>
 
-        <script type="text/javascript" src="js/login-settings.js"></script>
+
 
 
     </body>
