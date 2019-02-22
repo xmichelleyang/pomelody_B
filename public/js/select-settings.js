@@ -222,6 +222,11 @@ function genJSON(){
     console.log(`${data} and status ${status}`);
   });
 
+  window.setTimeout(function(){
+          window.location.href = 'you-can-do-it';
+  }, 500);
+    
+
 
 }
 
