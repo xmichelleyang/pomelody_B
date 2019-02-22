@@ -140,9 +140,9 @@ $("#resume").click(function () {
 
 function whichPage(){
   if ((document.URL).includes("you-can-do-it"))  {
-    return "relax"
+    return "work"
   }
   else {
-    return "work"
+    return "relax"
   }
 }
