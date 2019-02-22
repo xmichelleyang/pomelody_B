@@ -218,15 +218,12 @@ function genJSON(){
 
   console.log(dict);
 
-  $.post('/saveJSON', dict, function(data, status){
-    console.log(`${data} and status ${status}`);
-  });
+  $.post('/saveJSON', dict);
+}
 
-  window.setTimeout(function(){
-          window.location.href = 'you-can-do-it';
-  }, 500);
-    
-
+function navigateToStart(){
+  console.log("About to nav");
+      window.location.href = 'you-can-do-it';
 
 }
 

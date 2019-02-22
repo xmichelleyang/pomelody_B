@@ -17,6 +17,7 @@ function initializePage() {
         console.log(result);
         relaxTime = result['relaxTime'];
         prodTime = result['prodTime'];
+        console.log('relaxTime', relaxTime, 'prodTime', prodTime);
         if (whichPage() == "relax"){
             CountDown.Start(relaxTime * 60000 + 1000);
         }

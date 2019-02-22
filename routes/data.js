@@ -3,5 +3,6 @@
 var data = require('../data.json');
 
 exports.dataInfo = function(req, res) {
+	console.log("I see ", data);
 	res.json(data);
 }
