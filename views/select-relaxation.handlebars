@@ -26,7 +26,7 @@
         <div class = "header_buttons">
           <div class="back-button"><a href="select-productivity"> <button type="button"> Back </button> </a> </div>
           <h1 class="header"> Select Relaxation Settings </h1>
-          <!-- <a href="you-can-do-it"> --> <button type="button" onclick="navigateToStart()"> Start </button><!--  </a> -->
+          <!-- <a href="you-can-do-it"> --> <button type="button" onclick="genJSON()"> Start </button><!--  </a> -->
         </div>
 
         <div class="center-container" id="main-content">
@@ -89,7 +89,7 @@
             updateRelaxTimeVal(selected_value);
             $(this).parents(".dropdown").find('.btn').html(selected_value +  ' min <span class="caret"></span>');
             $(this).parents(".dropdown").find('.btn').val(selected_value);
-            genJSON();
+            // genJSON();
 
         });
 

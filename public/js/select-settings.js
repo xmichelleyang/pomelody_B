@@ -199,7 +199,7 @@ const handleProdSubmit = event => {
 
 
 
-function genJSON(){
+async function genJSON(){
   var prod_url = localStorage.getItem('prod_url');
   var prodName = "";
   var prod_time = localStorage.getItem('prod_time');
@@ -217,8 +217,16 @@ function genJSON(){
   };
 
   console.log(dict);
+  console.log("im in genjson");
+  $.post('/saveJSON', dict, function(result) {
+    console.log("literally anythitng");
+    navigateToStart();
+  });
 
-  $.post('/saveJSON', dict);
+  // alert(promise);
+  // console.log(promise);
+  // navigateToStart();
+
 }
 
 function navigateToStart(){
