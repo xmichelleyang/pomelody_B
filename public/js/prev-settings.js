@@ -21,7 +21,7 @@ function editProdTime(){
     }
     // Update value on JSON and page
 	updateProdTimeVal(change);
-	$('#prodTimeInfo').text(change + "min");
+	$('#prodTimeInfo').text(change + " min");
 }
 
 function editRelaxPlaylist(){
