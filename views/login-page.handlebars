@@ -37,22 +37,23 @@
                 <form>
                     <h2> Username: </h2>
                     <form action="/action_page.php" method="post">
-                      <input type="text" id="username" required>
+                      <input type="text" id="username" required class="form-control">
 
-                    </form>
-
+                    
                     <h2> Password: </h2>
                     <input type="password" ng-model="dataItem.password" class="form-control" name="password" placeholder="********" id="password" required/>
                 </form>
             <div class="enter_button">
-                <button type="submit" class="btn" onclick= "validateForm()" id="enter-button"> Enter </button>
+                <button type="submit" class="btn btn-info" onclick= "validateForm()" id="enter-button"> Enter </button>
             </div>
         </div>
 
+        <br>
         <hr>
+
         <h2> Or Login With Facebook: </h2>
 
-        <div class="jumbotron">
+        <div class="center-container">
           <p class="facebookLogin">
             <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
             </fb:login-button>
