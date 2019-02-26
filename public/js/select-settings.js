@@ -160,13 +160,20 @@ function getConfirmation(url, type) {
     if (type == "prod") {
       localStorage.setItem('prod_url', url);
       console.log("updated prod", url);
-      document.getElementById("prod-url").value = "My Rad Study Beats";
+      document.getElementById('choose-prod').style.display = "none";
+      document.getElementById('confirmed-playlist-prod').innerHTML = 'My Study Beats';
+      document.getElementById('resetBtn').style.display = 'block';
+
+
 
     }
     else if (type == "relax") {
       localStorage.setItem('relax_url', url);
       console.log("updated relax", url);
-      document.getElementById("relax-url").value = "My Rad Relax Beats";
+      document.getElementById('choose-relax').style.display = "none";
+      document.getElementById('confirmed-playlist-relax').innerHTML = 'My Relax Beats';
+      document.getElementById('resetBtn').style.display = 'block';
+
     }
 
   }

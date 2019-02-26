@@ -31,8 +31,13 @@
             <div>
                 <h4> Select Playlist URL: </h4>
                 <form id="productivity-form">
-                  <input type="text" class="url-input" id="prod-url">
+                  <div id='choose-prod' >
+                    <input type="text" class="url-input" id="prod-url">
                     <button type="button" onclick="verifyProdURL()" value ="Confirm" id="confirmBtn"> Confirm </button>
+                  </div>
+                  <p id="confirmed-playlist-prod"></p>
+                  <a href="select-productivity"> <button type="button" value ="Reset" id="resetBtn" style="display: none;"> Reset </button> </a>
+
 
                     <h4> Select Time Interval: </h4>
                         <div class="dropdown">
