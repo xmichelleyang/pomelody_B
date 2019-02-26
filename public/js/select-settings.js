@@ -49,18 +49,6 @@ function verifyRelaxURL(){
   getConfirmation(url, "relax");
 }
 
-/*function validateNonEmptyPlaylist() {
-  console.log('I am inside validate form');
-  var x = document.getElementById("next").value;
-  console.log(password);
-  if (x == "") {
-    alert("Please enter a valid playlist URL.");
-    return false;
-  }
-  else {
-    window.location.href = 'select-relaxation';
-  }
-}*/
 
 function verifyURL(input, type){
 
@@ -209,7 +197,7 @@ const handleProdSubmit = event => {
 
 
 
-function genJSON(){
+async function genJSON(){
   var prod_url = localStorage.getItem('prod_url');
   var prodName = "";
   var prod_time = localStorage.getItem('prod_time');
@@ -227,16 +215,18 @@ function genJSON(){
   };
 
   console.log(dict);
-
-  $.post('/saveJSON', dict, function(data, status){
-    console.log(`${data} and status ${status}`);
+  console.log("im in genjson");
+  $.post('/saveJSON', dict, function(result) {
+    console.log("literally anythitng");
+    navigateToStart();
   });
 
-  window.setTimeout(function(){
-          window.location.href = 'you-can-do-it';
-  }, 500);
 
+}
 
+function navigateToStart(){
+  console.log("About to nav");
+      window.location.href = 'you-can-do-it';
 
 }
 
