@@ -59,6 +59,7 @@ app.get('/treat-yourself', render.viewTreatYourself);
 app.get('/end', render.viewEnd);
 app.get('/data', data.dataInfo);
 app.post('/saveJSON', saveJSON.saveJSON);
+app.get('/spotify', render.viewSpotify);
 
 
 http.createServer(app).listen(app.get('port'), function(){

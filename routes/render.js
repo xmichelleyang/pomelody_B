@@ -60,3 +60,25 @@ exports.viewEnd = function(request, response){
 	response.render('end-page');
 };
 
+exports.viewSpotify = function(request, response) {
+	var client_id = 'b4c291c0effb4b64bd6b961dc52fab74'; // Your client id
+	var client_secret = 'e0d782e1d734465c96e5a8b3c602a9d1'; // Your secret
+	var redirect_uri = 'welcome'; // Your redirect uri
+
+
+	var state = generateRandomString(16);
+	res.cookie(stateKey, state);
+
+	// your application requests authorization
+	var scope = 'user-read-private user-read-email';
+	response.redirect('https://accounts.spotify.com/authorize?' +
+	querystring.stringify({
+	  response_type: 'code',
+	  client_id: client_id,
+	  scope: scope,
+	  redirect_uri: redirect_uri,
+	  state: state
+	}));
+
+
+}
