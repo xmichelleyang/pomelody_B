@@ -9,6 +9,7 @@
         <title> Pomelody </title>
         <!-- Our  CSS -->
         <link href="css/style.css" rel="stylesheet">
+        <link href="css/flat-ui.css" rel="stylesheet">
         <!-- Makes Website  Responsive -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
          <!-- Latest compiled and minified CSS -->
@@ -22,9 +23,9 @@
     <body>
 
         <div class = "header_buttons">
-            <div class="back-button"> <a href="welcome"> <button type="button"> Back </button> </a> </div>
+            <div class="back-button"> <a href="welcome"> <button type="button"  class = 'btn btn-info'> Back </button> </a> </div>
             <h1 class="header" id="test"> Select Productivity Settings </h1>
-            <div class="alignright"> <a href="select-relaxation"> <button type="button"> Next </button> </a> </div>
+            <div class="alignright"> <a href="select-relaxation"> <button type="button" class = 'btn btn-info'> Next </button> </a> </div>
         </div>
 
         <div class="center-container" id="main-content">
@@ -33,7 +34,7 @@
                 <form id="productivity-form">
                   <div id='choose-prod' >
                     <input type="text" class="url-input" id="prod-url">
-                    <button type="button" onclick="verifyProdURL()" value ="Confirm" id="confirmBtn"> Confirm </button>
+                    <button type="button" class = 'btn btn-info' onclick="verifyProdURL()" value ="Confirm" id="confirmBtn"> Confirm </button>
                   </div>
                   <p id="confirmed-playlist-prod"></p>
                   <a href="select-productivity"> <button type="button" value ="Reset" id="resetBtn" style="display: none;"> Reset </button> </a>
