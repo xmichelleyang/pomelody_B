@@ -21,6 +21,12 @@
         {{> facebook}}
         <script src="/js/facebook.js"></script>
 
+        <!-- Loading Bootstrap -->
+        <link href="dist/css/vendor/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Loading Flat UI Pro -->
+        <link href="dist/css/flat-ui.css" rel="stylesheet">
+
     </head>
 
 
@@ -39,7 +45,7 @@
                     <input type="password" ng-model="dataItem.password" class="form-control" name="password" placeholder="********" id="password" required/>
                 </form>
             <div class="enter_button">
-                <button type="submit" onclick= "validateForm()" id="enter-button"> Enter </button>
+                <button type="submit" class="btn" onclick= "validateForm()" id="enter-button"> Enter </button>
             </div>
         </div>
 
