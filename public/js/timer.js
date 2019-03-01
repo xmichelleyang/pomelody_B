@@ -9,7 +9,7 @@ $(document).ready(function() {
  * Function that is called when the document is ready.
  */
 function initializePage() {
-    // Get the correct amount of time    
+    // Get the correct amount of time
     var relaxTime = 0;
     var prodTime = 0;
 
@@ -36,20 +36,20 @@ function initializePage() {
 
 // Majority of timer code taken from: http://jsfiddle.net/rnQ2W/2/
 var CountDown = (function ($) {
-    // Length ms 
+    // Length ms
     var TimeOut = 10000;
     // Interval ms
     var TimeGap = 1000;
-    
+
     var CurrentTime = ( new Date() ).getTime();
     var EndTime = ( new Date() ).getTime() + TimeOut;
-    
+
     var GuiTimer = $('#countdown');
     var GuiPause = $('#pause');
     var GuiResume = $('#resume').hide();
-    
+
     var Running = true;
-    
+
     var UpdateTimer = function() {
         // Run till timeout
         if( CurrentTime + TimeGap < EndTime ) {
@@ -67,12 +67,12 @@ var CountDown = (function ($) {
                 GuiTimer.css('color','red');
                 // // Dynamically switch between pages
                 if(whichPage() == "relax") {
-                    window.location = '../treat-yourself.html'
-                  
+                    window.location = '../treat-yourself'
+
                 }
                 else {
-                    
-                    window.location = '../you-can-do-it.html'
+
+                    window.location = '../you-can-do-it'
                 }
             }
         }
@@ -81,31 +81,31 @@ var CountDown = (function ($) {
         Time.setTime( EndTime - CurrentTime );
         var Minutes = Time.getMinutes();
         var Seconds = Time.getSeconds();
-        
-        GuiTimer.html( 
-            (Minutes < 10 ? '0' : '') + Minutes 
-            + ':' 
+
+        GuiTimer.html(
+            (Minutes < 10 ? '0' : '') + Minutes
+            + ':'
             + (Seconds < 10 ? '0' : '') + Seconds );
 
         function playAudio(){
-            var x = new Audio("success-sound.mp3") 
+            var x = new Audio("success-sound.mp3")
             x.play();
             console.log("TRying to play sound")
         }
     };
-    
+
     var Pause = function() {
         Running = false;
         GuiPause.hide();
         GuiResume.show();
     };
-    
+
     var Resume = function() {
         Running = true;
         GuiPause.show();
         GuiResume.hide();
     };
-    
+
     var Start = function( Timeout ) {
         TimeOut = Timeout;
         CurrentTime = ( new Date() ).getTime();
@@ -125,7 +125,7 @@ jQuery('#resume').on('click', CountDown.Resume);
 
 $("#pause").click(function () {
   console.log(document.URL)
-  
+
   $("#status").text('Paused');
 });
 
