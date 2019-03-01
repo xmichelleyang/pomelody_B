@@ -37,8 +37,10 @@
 
                 <form>
                   <div id='choose-relax' >
-                    <input type="text" name="relax-url" class="url-input" id="relax-url">
-                    <button type="button" onclick="verifyRelaxURL()"  class = 'btn btn-info' value = "Confirm" id="confirmBtn"> Confirm </button>
+                    <input type="text" name="relax-url" class="url-input form-control" id="relax-url" />
+                    <div class="enter_button">
+                    <button type="button" onclick="verifyRelaxURL()"  class = 'btn btn-primary' value = "Confirm" id="confirmBtn"> Confirm </button>
+                    </div>
                   </div>
                   <p id="confirmed-playlist-relax"></p>
                   <a href="select-relaxation"> <button type="button" value ="Reset" id="resetBtn" style="display: none;"> Reset </button> </a>
