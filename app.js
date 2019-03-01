@@ -45,7 +45,6 @@ if ('development' == app.get('env')) {
 //app.get('/', index.view);
 // Example route
 app.get('/', render.viewLogin);
-app.get('/login', render.viewLogin)
 app.get('/welcome', render.viewWelcome);
 app.get('/help-screen',render.viewHelpScreen);
 app.get('/prev-settings', render.viewPrevSettings);
@@ -59,7 +58,7 @@ app.get('/treat-yourself', render.viewTreatYourself);
 app.get('/end', render.viewEnd);
 app.get('/data', data.dataInfo);
 app.post('/saveJSON', saveJSON.saveJSON);
-app.get('/spotify', render.viewSpotify);
+app.get('/spotifyLogin', render.viewSpotify);
 
 
 http.createServer(app).listen(app.get('port'), function(){

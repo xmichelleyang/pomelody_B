@@ -43,5 +43,15 @@
                 <a href="help-screen"> <button type="button" class="btn btn-primary"> Help </button> </a>
             </div>
         </div>
+
+        <script type="text/javascript">
+            var url = document.URL;
+            // https://stackoverflow.com/questions/29934606/how-to-get-access-token-from-the-url
+            access_token = url.match(/\#(?:access_token)\=([\S\s]*?)\&/)[1];
+            if(access_token == null){
+                alert("Please ");
+            }
+            console.log(access_token);
+        </script>
     </body>
 </html>

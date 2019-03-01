@@ -1,5 +1,9 @@
 // Get all of our friend data
 var data = require('../data.json');
+var $ = require('jquery');
+var param = require('jquery-param');
+var fs = require('fs');
+
 
 exports.viewLogin = function(request, response){
 	console.log("hi im working uwu");
@@ -61,24 +65,33 @@ exports.viewEnd = function(request, response){
 };
 
 exports.viewSpotify = function(request, response) {
-	var client_id = 'b4c291c0effb4b64bd6b961dc52fab74'; // Your client id
-	var client_secret = 'e0d782e1d734465c96e5a8b3c602a9d1'; // Your secret
+	console.log("Correctly inside viewSpotify call");
+	var client_id = "b4c291c0effb4b64bd6b961dc52fab74"; // Your client id
+	var client_secret = "";
+	fs.readFile('not-secret-key.txt', (err, data) => {
+							  if (err) throw err;
+							  console.log(data);
+							  client_secret = data
+							}); // Your secret
 	var redirect_uri = 'welcome'; // Your redirect uri
 
+	var code = request.query.code;
+    var body = {
+    	grant_type: "authorization_code",
+    	code: code,
+    	redirect_uri: "http://localhost:3000/welcome"
+    }
+    paramed_body = param(body);
+    var details = 	{
+		method: 'POST',
+		data: paramed_body,
+		headers: {
+			'Content-Type' : 'application/x-www-form-urlencoded',
+			'Authorization': "Basic "+client_id+":"+client_secret,
+		}
+	}
+	$.ajax('https://accounts.spotify.com/api/token', details);
 
-	var state = generateRandomString(16);
-	res.cookie(stateKey, state);
-
-	// your application requests authorization
-	var scope = 'user-read-private user-read-email';
-	response.redirect('https://accounts.spotify.com/authorize?' +
-	querystring.stringify({
-	  response_type: 'code',
-	  client_id: client_id,
-	  scope: scope,
-	  redirect_uri: redirect_uri,
-	  state: state
-	}));
-
+    
 
 }
