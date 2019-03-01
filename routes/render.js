@@ -13,7 +13,7 @@ exports.viewWelcome = function(request, response){
 
 exports.viewPrevSettings = function(request, response){
 	console.log("hi im working uwu");
-	response.render('prev-settings', data); 
+	response.render('prev-settings', data);
 };
 
 exports.viewSelectProd = function(request, response){
@@ -66,10 +66,11 @@ exports.viewSpotify = function(request, response) {
 	var redirect_uri = 'welcome'; // Your redirect uri
 
 
-	var state = generateRandomString(16);
-	res.cookie(stateKey, state);
+	//var state = generateRandomString(16);
+	//res.cookie(stateKey, state);
 
 	// your application requests authorization
+	/*
 	var scope = 'user-read-private user-read-email';
 	response.redirect('https://accounts.spotify.com/authorize?' +
 	querystring.stringify({
@@ -79,6 +80,7 @@ exports.viewSpotify = function(request, response) {
 	  redirect_uri: redirect_uri,
 	  state: state
 	}));
+	*/
 
 
 }
