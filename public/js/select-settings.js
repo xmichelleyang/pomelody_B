@@ -107,8 +107,8 @@ function getConfirmation(url, type) {
   //     .then(function(data) {
   //       console.log(data)
   //     })
-    
-    
+
+
   // //}
 
   //   var client_id = 'b4c291c0effb4b64bd6b961dc52fab74'; // Your client id
@@ -138,7 +138,7 @@ function getConfirmation(url, type) {
   //   })    // }).then(res => res.json())
   //   .then(response => console.log("Success", JSON.stringify(response)))
 
-  
+
 
   // Ask user to confirm playlist //TODO: This can just be one confirm later with + name
   var retVal = false;
