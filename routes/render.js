@@ -30,6 +30,10 @@ exports.viewSelectProd = function(request, response){
 	console.log("hi im working uwu");
 	response.render('select-productivity');
 };
+exports.viewSelectProd_B = function(request, response){
+	console.log("hi im working uwu");
+	response.render('select-productivity_B');
+};
 
 exports.viewSelectIntervalProd = function(request, response){
 	console.log("hi im working uwu");

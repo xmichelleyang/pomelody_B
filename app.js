@@ -50,6 +50,8 @@ app.get('/instructions', render.viewInstructions);
 app.get('/help-screen',render.viewHelpScreen);
 app.get('/prev-settings', render.viewPrevSettings);
 app.get('/select-productivity', render.viewSelectProd);
+app.get('/select-productivity_A', render.viewSelectProd);
+app.get('/select-productivity_B', render.viewSelectProd_B);
 app.get('/select-interval-of-time-prod', render.viewSelectIntervalProd);
 app.get('/select-relaxation', render.viewSelectRelax);
 app.get('/select-interval-of-time-relax', render.viewSelectIntervalRelax);
