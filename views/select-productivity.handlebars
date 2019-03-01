@@ -21,25 +21,29 @@
     </head>
 
     <body>
-
-        <div class = "header_buttons">
-            <div class="back-button"> <a href="welcome"> <button type="button"  class = 'btn btn-info'> Back </button> </a> </div>
-            <h1 class="header" id="test"> Select Productivity Settings </h1>
-            <div class="alignright"> <a href="select-relaxation"> <button type="button" class = 'btn btn-info'> Next </button> </a> </div>
+      <div class= "header">
+        <div class="alignleft"> <a href="instructions"> <button type="button" class="btn btn-primary"> Back </button> </a>
         </div>
+        <h1 id="test"> Select Productivity Settings</h1>
+        <div class="alignright"> <a href="select-relaxation"> <button type="button" class="btn btn-primary"> Next </button> </a>
+        </div>
+
+      </div>
+
+
 
         <div class="center-container" id="main-content">
             <div>
                 <h4> Select Playlist URL: </h4>
                 <form id="productivity-form">
                   <div id='choose-prod' >
-                    <input type="text" class="url-input" id="prod-url">
-                    <button type="button" class = 'btn btn-info' onclick="verifyProdURL()" value ="Confirm" id="confirmBtn"> Confirm </button>
+                    <input type="text" class="url-input form-control" placeholder="Paste Playlist URL" id="prod-url" />
+                    <div class="enter_button">
+                      <button type="button" class="btn btn-primary" onclick="verifyProdURL()" value ="Confirm" id="confirmBtn"> Confirm </button>
+                      </div>
                   </div>
                   <p id="confirmed-playlist-prod"></p>
                   <a href="select-productivity"> <button type="button" value ="Reset" id="resetBtn" style="display: none;"> Reset </button> </a>
-
-
                     <h4> Select Time Interval: </h4>
                         <div class="dropdown">
                           <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">

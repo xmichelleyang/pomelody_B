@@ -15,9 +15,15 @@ exports.viewWelcome = function(request, response){
 	response.render('welcome-to-pomelody');
 };
 
+exports.viewInstructions = function(request, response){
+	console.log("hi im working uwu");
+	response.render('instructions', data);
+};
+
+
 exports.viewPrevSettings = function(request, response){
 	console.log("hi im working uwu");
-	response.render('prev-settings', data); 
+	response.render('prev-settings', data);
 };
 
 exports.viewSelectProd = function(request, response){
@@ -92,6 +98,23 @@ exports.viewSpotify = function(request, response) {
 	}
 	$.ajax('https://accounts.spotify.com/api/token', details);
 
-    
+
+
+	//var state = generateRandomString(16);
+	//res.cookie(stateKey, state);
+
+	// your application requests authorization
+	/*
+	var scope = 'user-read-private user-read-email';
+	response.redirect('https://accounts.spotify.com/authorize?' +
+	querystring.stringify({
+	  response_type: 'code',
+	  client_id: client_id,
+	  scope: scope,
+	  redirect_uri: redirect_uri,
+	  state: state
+	}));
+	*/
+
 
 }

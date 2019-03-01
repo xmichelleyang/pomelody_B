@@ -46,6 +46,7 @@ if ('development' == app.get('env')) {
 // Example route
 app.get('/', render.viewLogin);
 app.get('/welcome', render.viewWelcome);
+app.get('/instructions', render.viewInstructions);
 app.get('/help-screen',render.viewHelpScreen);
 app.get('/prev-settings', render.viewPrevSettings);
 app.get('/select-productivity', render.viewSelectProd);

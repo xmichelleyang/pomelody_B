@@ -930,7 +930,7 @@ fieldset[disabled] .btn-primary.hover,
 fieldset[disabled] .btn-primary:focus,
 fieldset[disabled] .btn-primary:active,
 fieldset[disabled] .btn-primary.active {
-  background-color: #bdc3c7;
+  background-color: #1abc9c;
   border-color: #1abc9c;
 }
 
@@ -941,7 +941,7 @@ fieldset[disabled] .btn-primary.active {
 
 .btn-info {
   color: white;
-  background-color: #3498db;
+  background-color: #48c9b0;
 }
 
 .show > .dropdown-toggle.btn-info, .btn-info:hover, .btn-info.hover, .btn-info:focus, .btn-info:active, .btn-info.active {

@@ -54,8 +54,8 @@ input.url-input {
 	text-align: center;
 }
 .header {
-/*	margin: 20px;
-	margin-top: 40px;*/
+	margin: 20px;
+	margin-top: 40px;
 	padding: 0px;
 	margin: 0px;
 	text-align: center;
@@ -79,6 +79,7 @@ h2 {
 	flex-flow: row wrap;
 	justify-content: center;
 	align-items: center;
+	color: #48c9b0;
 }
 
 

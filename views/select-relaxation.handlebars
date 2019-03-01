@@ -23,11 +23,12 @@
 
 
     <body>
-
-        <div class = "header_buttons">
-          <div class="back-button"><a href="select-productivity"> <button type="button" class = 'btn btn-info'> Back </button> </a> </div>
-          <h1 class="header"> Select Relaxation Settings </h1>
-          <!-- <a href="you-can-do-it"> --> <button type="button" class = 'btn btn-info' onclick="genJSON()"> Start </button><!--  </a> -->
+      <div class= "header">
+        <div class="alignleft"> <a href="select-productivity"> <button type="button" class="btn btn-primary"> Back </button> </a>
+        </div>
+        <h1 id="test"> Select Relaxation Settings</h1>
+        <div class="alignright"> <a href="select-productivity"> <button type="button" class="btn btn-primary" onclick="genJSON()"> Start </button> </a>
+        </div>
         </div>
 
         <div class="center-container" id="main-content">
@@ -36,8 +37,10 @@
 
                 <form>
                   <div id='choose-relax' >
-                    <input type="text" name="relax-url" class="url-input" id="relax-url">
-                    <button type="button" onclick="verifyRelaxURL()"  class = 'btn btn-info' value = "Confirm" id="confirmBtn"> Confirm </button>
+                    <input type="text" name="relax-url" class="url-input form-control" id="relax-url" />
+                    <div class="enter_button">
+                    <button type="button" onclick="verifyRelaxURL()"  class = 'btn btn-primary' value = "Confirm" id="confirmBtn"> Confirm </button>
+                    </div>
                   </div>
                   <p id="confirmed-playlist-relax"></p>
                   <a href="select-relaxation"> <button type="button" value ="Reset" id="resetBtn" style="display: none;"> Reset </button> </a>
