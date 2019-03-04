@@ -3,6 +3,8 @@ var data = require('../data.json');
 var $ = require('jquery');
 var param = require('jquery-param');
 var fs = require('fs');
+const axios = require('axios');
+
 
 
 exports.viewLogin = function(request, response){
@@ -74,51 +76,59 @@ exports.viewEnd = function(request, response){
 	response.render('end-page');
 };
 
-exports.viewSpotify = function(request, response) {
+exports.getSpotifyToken = function(request, response) {
 	console.log("Correctly inside viewSpotify call");
 	var client_id = "b4c291c0effb4b64bd6b961dc52fab74"; // Your client id
-	var client_secret = "";
-	fs.readFile('not-secret-key.txt', (err, data) => {
-							  if (err) throw err;
-							  console.log(data);
-							  client_secret = data
-							}); // Your secret
-	var redirect_uri = 'welcome'; // Your redirect uri
+	var client_secret = "e0d782e1d734465c96e5a8b3c602a9d1";
+	// fs.readFile('not-secret-key.txt', (err, data) => {
+	// 						  if (err) throw err;
+	// 						  console.log(data);
+	// 						  client_secret = data
+	// 						}); // Your secret
 
+	// The code we get back from Spotify
 	var code = request.query.code;
-    var body = {
-    	grant_type: "authorization_code",
-    	code: code,
-    	redirect_uri: "http://localhost:3000/welcome"
-    }
-    paramed_body = param(body);
-    var details = 	{
+	// Body object to be parametized for details
+	var body = {
+		grant_type: "authorization_code",
+		code: code,
+		redirect_uri: "http://localhost:3000/spotifyLogin"
+	}
+	paramed_body = param(body);
+	// The configuration for the post request
+	var details = 	{
+		url: 'https://accounts.spotify.com/api/token',
 		method: 'POST',
 		data: paramed_body,
 		headers: {
 			'Content-Type' : 'application/x-www-form-urlencoded',
-			'Authorization': "Basic "+client_id+":"+client_secret,
+			'Authorization': 'Basic ' + (new Buffer(client_id + ':' + client_secret).toString('base64'))
 		}
 	}
-	$.ajax('https://accounts.spotify.com/api/token', details);
+	axios.request(details).then(function(response) {
+		console.log("The response we recieved was", response.data)
 
+		// This is the same as var access_token = response.data.access_token
+		const {access_token, refresh_token} = response.data
 
-
-	//var state = generateRandomString(16);
-	//res.cookie(stateKey, state);
-
-	// your application requests authorization
-	/*
-	var scope = 'user-read-private user-read-email';
-	response.redirect('https://accounts.spotify.com/authorize?' +
-	querystring.stringify({
-	  response_type: 'code',
-	  client_id: client_id,
-	  scope: scope,
-	  redirect_uri: redirect_uri,
-	  state: state
-	}));
-	*/
+	}).catch( function (error) {
+		if (error.response) {
+			// The request was made and the server responded with a status code
+			// that falls out of the range of 2xx
+			console.log("data", error.response.data);
+			console.log("status", error.response.status);
+			console.log("headers", error.response.headers);
+		} else if (error.request) {
+			// The request was made but no response was received
+			// `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+			// http.ClientRequest in node.js
+			console.log(error.request);
+		} else {
+			// Something happened in setting up the request that triggered an Error
+			console.log('Error', error.message);
+		}
+		console.log(error.config);
+	});
 
 
 }

@@ -51,21 +51,20 @@
 
 
         <hr>
-<!--
+
         <h2> Login With Spotify: </h2>
 
         <div class="center-container">
           <p class="spotifyLogin">
             <button id="spotify-login" class="btn btn-primary" onclick="spotifyLogin()">Log in with Spotify</button>
           </p>
-        </div> -->
+        </div>
 
         <script type="text/javascript">
             function spotifyLogin() {
                 var authorizeURL = 'https://accounts.spotify.com/authorize' + '?';
                 console.log(document.URL);
                 console.log(document.URL + '/welcome');
-
                 var params = {
                     client_id: "b4c291c0effb4b64bd6b961dc52fab74",
                     response_type: "code",
@@ -76,8 +75,6 @@
                 console.log(authorizeURL);
                 window.location.href = authorizeURL;
             }
-
-
         </script>
 
         <hr>

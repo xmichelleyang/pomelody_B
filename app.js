@@ -61,7 +61,7 @@ app.get('/treat-yourself', render.viewTreatYourself);
 app.get('/end', render.viewEnd);
 app.get('/data', data.dataInfo);
 app.post('/saveJSON', saveJSON.saveJSON);
-app.get('/spotifyLogin', render.viewSpotify);
+app.get('/spotifyLogin', render.getSpotifyToken);
 
 
 http.createServer(app).listen(app.get('port'), function(){
