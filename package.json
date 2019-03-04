@@ -12,6 +12,7 @@
     "start": "node app.js"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "express": "3.x",
     "express3-handlebars": "*",
     "jquery": "^3.3.1",
