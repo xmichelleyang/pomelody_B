@@ -5,8 +5,6 @@
 // }
 
 function verifyProdURL(){
-  //$.get("/data/", callback);
-
   var url = (document.getElementById("prod-url").value);
   // isProd = true;
   // isRelax = false;
@@ -52,8 +50,6 @@ function verifyRelaxURL(){
 
 function verifyURL(input, type){
 
-  //$.get("/data/", callback);
-
   var url = input;
   // validation fails if the input is blank
   if(url == "") {
@@ -81,65 +77,17 @@ const myInit = { method: 'GET',
                mode: 'cors',
                cache: 'default' };
 
-function getConfirmation(url, type) {
+async function getConfirmation(url, type) {
 
   // Type == Prod or Relax
   if (type == undefined) {
     type = whichPage()
   }
 
-  window.location.href = 'spotify';
 
-  // //url issues need to be addressed
-  // if (url.includes("spotify")) {
-  //   token = url.split("playlist/")[1]
-  //   if (token.includes("?si=")) {
-  //     token = token.split("?si=")[0]
-  //   }
-
-  //   const spotifyapi = "https://api.spotify.com/v1/playlists/" + token + '-H Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer BQDw1LxB5bAWuZ3U3n7IpBNKqILRA4n4HcX__FI0tJ1ujznhhmihhAMY23G8DrWAUnyBcT0bldEoRTRPFsWaDHaz5IBrAWl3pd7_LHaf8r4P9TBEIp2dj8V8OVoSdmzUIA-qUnlepDCTnpJRAPhkJpxfNw3Hr61K9g'
-  //   console.log(spotifyapi)
-
-  //   fetch(spotifyapi, myInit).then(
-  //     data=>{return data.json()}).then(res=>{console.log(res)})
-
-  //   fetch(spotifyapi)
-  //     .then(function(data) {
-  //       console.log(data)
-  //     })
-
-
-  // //}
-
-  //   var client_id = 'b4c291c0effb4b64bd6b961dc52fab74'; // Your client id
-  //   var client_secret = 'e0d782e1d734465c96e5a8b3c602a9d1'; // Your secret
-  //   var redirect_uri = 'example.html'; // Your redirect uri
-
-
-    // var auth_url = "https://accounts.spotify.com/authorize";
-    // auth_url += "?client_id=" + client_id;
-    // auth_url += "&response_type=token";
-    // auth_url += "&redirect_uri=http://example.com";
-    // console.log(auth_url)
-    // fetch(auth_url, {
-    //   method:'POST'
-    // }).then(res => res.json())
-    // .then(response => console.log("Success", JSON.stringify(response)))
-
-  //   fetch (auth_url, {
-  //     method: 'POST',
-  //     body: 'grant_type=client_credentials',
-  //     headers: {
-  //       'Content-Type' : 'application/x-www-form-urlencoded',
-  //       'Authorization': "Basic b4c291c0effb4b64bd6b961dc52fab74:04a8dab3dc93464fa470ddf9f5b6e435",
-  //       'Access-Control-Allow-Origin': '*'
-  //     },
-  //     mode: 'cors'
-  //   })    // }).then(res => res.json())
-  //   .then(response => console.log("Success", JSON.stringify(response)))
-
-
-
+  var playlist_id = url.split("playlist/")[1];
+  var playlist_name = await $.get("/playlistInfo/" + playlist_id);
+  console.log(playlist_name);
   // Ask user to confirm playlist //TODO: This can just be one confirm later with + name
   var retVal = false;
   if (type == "prod") {

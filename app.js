@@ -12,12 +12,8 @@ var index = require('./routes/index');
 var data = require('./routes/data');
 var render = require('./routes/render');
 var saveJSON = require('./routes/saveJSON');
+var spotify = require('./api_handler/spotify');
 
-
-
-
-// Example route
-// var user = require('./routes/user');
 
 var app = express();
 
@@ -62,6 +58,7 @@ app.get('/end', render.viewEnd);
 app.get('/data', data.dataInfo);
 app.post('/saveJSON', saveJSON.saveJSON);
 app.get('/spotifyLogin', render.getSpotifyToken);
+app.get('/playlistInfo/:id', spotify.getPlaylistName);
 
 
 http.createServer(app).listen(app.get('port'), function(){
