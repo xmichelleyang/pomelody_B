@@ -91,10 +91,10 @@ async function getConfirmation(url, type) {
   // Ask user to confirm playlist //TODO: This can just be one confirm later with + name
   var retVal = false;
   if (type == "prod") {
-    retVal = confirm("Is 'My Rad Study Beats' the correct playlist?");
+    retVal = confirm("Is " + playlist_name +  " the correct playlist?");
   }
   else {
-    retVal = confirm("Is 'My Rad Relax Beats' the correct playlist?");
+    retVal = confirm("Is " + playlist_name +  " the correct playlist?");
   }
 
   // If user says yes, update the value
@@ -104,7 +104,7 @@ async function getConfirmation(url, type) {
       localStorage.setItem('prod_url', url);
       console.log("updated prod", url);
       document.getElementById('choose-prod').style.display = "none";
-      document.getElementById('confirmed-playlist-prod').innerHTML = 'My Study Beats';
+      document.getElementById('confirmed-playlist-prod').innerHTML = playlist_name;
       document.getElementById('resetBtn').style.display = 'block';
 
 
@@ -114,7 +114,7 @@ async function getConfirmation(url, type) {
       localStorage.setItem('relax_url', url);
       console.log("updated relax", url);
       document.getElementById('choose-relax').style.display = "none";
-      document.getElementById('confirmed-playlist-relax').innerHTML = 'My Relax Beats';
+      document.getElementById('confirmed-playlist-relax').innerHTML = playlist_name;
       document.getElementById('resetBtn').style.display = 'block';
 
     }
