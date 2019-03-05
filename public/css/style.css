@@ -64,15 +64,17 @@ input.url-input {
 	align-items: center;
 	justify-content: center;
 	font-size: 40px !important;
+	border-bottom-width: 20px !important;
+	border-bottom-style: solid;
 }
 
-.header a {
+.header a, .header a:hover, .header a:active{
 	color: white;
 }
-
+/*
 .header a:hover{
 	color: white;
-}
+} */
 
 h2 {
 	font-size: 30px !important;
