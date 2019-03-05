@@ -7,7 +7,7 @@ exports.saveJSON = function(req, res) {
 				res.send(400);
 	      return;
 	  };
-	  console.log("File has been created");
+	  console.log("File has been created in", __dirname);
 		res.send(200);
 	});
 
