@@ -64,7 +64,8 @@
             function spotifyLogin() {
                 var authorizeURL = 'https://accounts.spotify.com/authorize' + '?';
                 console.log(document.URL);
-                console.log(document.URL + '/welcome');
+                console.log("Upon log in button, the current redirect page is", document.URL + 'spotifyLogin');
+                alert(document.URL + 'spotifyLogin')
                 var params = {
                     client_id: "b4c291c0effb4b64bd6b961dc52fab74",
                     response_type: "code",
