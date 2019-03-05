@@ -1,8 +1,17 @@
 {
+<<<<<<< HEAD
     "prodURL": "",
     "prodName": "",
     "prodTime": "10",
     "relaxURL": "",
     "relaxName": "",
     "relaxTime": ""
+=======
+    "prodURL": "https://open.spotify.com/playlist/7pT1p0NWt9oXk2dJHVPsM7",
+    "prodName": "",
+    "prodTime": "30",
+    "relaxURL": "https://open.spotify.com/playlist/7pT1p0NWt9oXk2dJHVPsM7",
+    "relaxName": "",
+    "relaxTime": "10"
+>>>>>>> 2f3ff1606a6dbaf87daeb12e585ab115b3694ad1
 }

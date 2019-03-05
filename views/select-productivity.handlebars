@@ -20,7 +20,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
         <!-- For icons -->
         <script src="https://unpkg.com/ionicons@4.4.4/dist/ionicons.js"></script>
-
+        <!-- Flat UI -->
         <link href="css/flat-ui.css" rel="stylesheet">
 
         <script>
@@ -58,15 +58,19 @@
                       <button type="button" class="btn btn-primary" onclick="verifyProdURL()" value ="Confirm" id="confirmBtn"> Confirm </button>
                       </div>
                   </div>
+
+
+
                   <p id="confirmed-playlist-prod"></p>
-                  <a href="select-productivity"> <button type="button" value ="Reset" id="resetBtn" style="display: none;"> Reset </button> </a>
+                  <a href="select-productivity"> <button type="button" class="btn btn-primary" value ="Reset" id="resetBtn" style="display: none;"> Reset </button> </a>
                     <h4> Select Time Interval: </h4>
                     <p id="info"> This is the amount of time that you want to be working for. </p>
                         <div class="dropdown">
-                          <button class="btn btn-default" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                          <button class="btn btn-primary" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             0 min
                             <span class="caret"></span>
                           </button>
+                          <i class="dropdown-arrow"></i>
                           <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                             <li><a href="#" data-value="5">5 min </a></li>
                             <li><a href="#" data-value="10">10 min </a></li>
@@ -86,7 +90,7 @@
         <script type="text/javascript">
 
         function customTime(){
-
+            console.log("custom time called ")
             updateProdTimeVal(selected_value);
             $(this).parents(".dropdown").find('.btn').html(selected_value + ' <span class="caret"></span>');
             $(this).parents(".dropdown").find('.btn').val(selected_value);

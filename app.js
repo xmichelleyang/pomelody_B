@@ -44,7 +44,7 @@ app.get('/', render.viewLogin);
 app.get('/welcome', render.viewWelcome);
 app.get('/instructions', render.viewInstructions);
 app.get('/about-pomodoro', render.viewAboutPomodoro);
-app.get('/help-screen',render.viewHelpScreen);
+app.get('/help',render.viewHelpScreen);
 app.get('/prev-settings', render.viewPrevSettings);
 app.get('/select-productivity', render.viewSelectProd);
 app.get('/select-productivity_A', render.viewSelectProd);

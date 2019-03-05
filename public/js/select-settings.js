@@ -6,6 +6,7 @@
 
 
 function verifyProdURL(){
+  console.log("inside prod url erification");
   var url = (document.getElementById("prod-url").value);
   // isProd = true;
   // isRelax = false;

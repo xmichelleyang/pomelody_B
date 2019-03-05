@@ -6,17 +6,19 @@
 	top: 0px;
 	left: 0px;
 }
-
- .line{
-width: 112px;
-height: 47px;
-position: relative;
+.line{
+	width: 112px;
+	height: 47px;
+	position: relative;
 }
 
 #main-content{
-
-	padding-right: 8%;
-	padding-left: 8%;
+	padding-right: 15%;
+	padding-left: 15%;
+	height: 75%;
+	flex-grow: 1;
+	flex-shrink: 1;
+	flex-basis: auto;
 }
 
 body, html {
@@ -54,26 +56,45 @@ input.url-input {
 }
 .header {
 	margin: 20px;
-	margin-top: 40px;
 	padding: 0px;
 	margin: 0px;
 	text-align: center;
 	background-color: #48c9b0;
 	color: white;
-	height: 20%;
+	height: 25%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	font-size: 40px !important;
-	margin-bottom: 20px;
+	border-bottom-width: 20px !important;
+	border-bottom-style: solid;
 }
 
-.header a {
+/* For all states of header links, make them white */
+.header a:link,
+.header a:visited,
+.header a:hover,
+.header a:focus,
+.header a:active {
 	color: white;
 }
-
+/*
 .header a:hover{
 	color: white;
+} */
+
+h1, h2, h3, h4 {
+	color:  #212f3d;
+}
+
+h1,h2 {
+	text-align: center;
+}
+
+h1 {
+	font-size: 30px !important;
+	margin-top: 0px !important;
+	margin-bottom: 0px !important;
 }
 
 h2 {
@@ -83,6 +104,7 @@ h2 {
 
 h4 {
 	font-weight: bold !important;
+	font-size: 25px !important;
 }
 
 #info {
@@ -129,16 +151,6 @@ h4 {
 	margin: 20px;
 }
 
-h1,h2 {
-	text-align: center;
-}
-
-h1 {
-	font-size: 36px !important;
-	padding-top: 30px !important;
-	margin-top: 0px !important;
-}
-
 /* .header #header-icon {
 	margin-top: 5px !important;
 	border-style: solid;
@@ -153,16 +165,17 @@ h1 {
 
 }
 
-.alignright ion-icon {
-	padding-top: 30px !important;
+.header .alignright ion-icon {
+	padding-top: 20px !important;
 	padding-right: 20px !important;
 	padding-left: 20px !important;
 }
 
-.alignleft ion-icon{
-	padding-top: 30px !important;
+.header .alignleft ion-icon{
+	padding-top: 20px !important;
 	padding-right: 20px !important;
 	padding-left: 20px !important;
+	color: white;
 }
 
 
@@ -192,4 +205,32 @@ h1 {
 
 .wide_header {
 	display: flex
+}
+
+
+.dropdown-menu > li > a, .select2-drop > li > a {
+  padding: 8px 16px;
+  line-height: 1.429;
+  color: #606d7a;
+  display: block;
+}
+
+.dropdown-menu > li > a:selected, .select2-drop > li > a {
+  background-color: #fff !important;
+}
+
+.dropdown-menu > li > a:hover, .select2-drop > li > a:hover, .dropdown-menu > li > a:focus, .select2-drop > li > a:focus {
+  color: #55606c;
+  background-color: rgba(202, 206, 209, 0.5);
+}
+
+
+.card {
+	margin-bottom: 0px !important;
+}
+.card-body {
+	padding: 20px;
+}
+.card-body p {
+	margin: 0px;
 }
