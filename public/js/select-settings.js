@@ -181,7 +181,7 @@ async function genJSON(){
   console.log("im in genjson");
   $.post('/saveJSON', dict, function(result) {
     console.log("literally anythitng");
-    navigateToStart();
+    // navigateToStart();
   });
 
 
