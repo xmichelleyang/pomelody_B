@@ -120,7 +120,13 @@ async function getConfirmation(url, type) {
     }
 
   }
+function resetProd() {
+  localStorage.setItem('prod_url', '');
+}
 
+function resetRelax(){
+  localStorage.setItem('relax_url', '');
+}
 
 
 
