@@ -2,19 +2,22 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <!-- This is a comment -->
-
-        <title> Help </title>
+        <title> Help Page </title>
         <!-- Our  CSS -->
         <link href="css/style.css" rel="stylesheet">
+        <link href="css/flat-ui.css" rel="stylesheet">
         <!-- Makes Website  Responsive -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-         <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <!-- Latest compiled and minified CSS. Bootstrap FOUR!-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css">
         <!-- jQuery library -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <!-- Latest compiled Bootstrap -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <!-- For icons -->
+        <script src="https://unpkg.com/ionicons@4.4.4/dist/ionicons.js"></script>
+        <!-- Flat UI -->
+        <link href="css/flat-ui.css" rel="stylesheet">
 
         <!-- Google Analytics -->
         <script>
@@ -31,23 +34,51 @@
     </head>
 
     <body>
-        <h1 class= 'header'> Help Screen </h1>
-        <div class="center-container" id="main-content">
-            <h2> 1. Select Productivity Music </h2>
-            <h2> 2. Select Relaxing Music </h2>
-            <h2> 3. Select Intervals </h2>
+        <h1 class= 'header'> FAQ </h1>
+        <br>
+        <br>
 
-        <div class='center-container'>
-            <h3> Have a problem? Provide your email below and we will write back to you. </h3>
-        </div>
-        <div>
-            <form>
-                  <input type="text" name="prod-url" class="url-input" id="prod-url">
-                </form>
-        </div>
-            <div class="enter_button">
-                <a href="welcome-to-pomelody.html"> <button type="button" class='btn btn-primary'> Submit </button> </a>
+        <div id="main-content">
+
+          <div class="accordion list-group">
+            <div class="card">
+              <button class="list-group-item" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <h4> What does Pomodoro mean? <div class="alignright"><ion-icon name="arrow-dropdown"></ion-icon> </div> </h4>
+              </button>
+              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                    <p> The Pomodoro Technique uses a timer to break down work into intervals that are generally 25 minutes. This technique helps maximize efficiency in achieving goals within a certain time bound. </p>
+                </div>
+              </div>
             </div>
+
+            <div class="card">
+              <button class="list-group-item" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                <h4> How do I best use this app? <div class="alignright"><ion-icon name="arrow-dropdown"></ion-icon> </h4>
+              </button>
+              <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body">
+                  <p> Our application is designed to be used in three easy steps.
+                  1) Authenticating via logging in with Spotify. <br>
+                  2) Select the settings you would like for your <b> productivity </b>session. <br>
+                  3) Select the settings you would like for your <b> break </b> session. <br>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <button class="list-group-item" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                <h4> What types of playlists can I use? <div class="alignright"><ion-icon name="arrow-dropdown"></ion-icon> </h4>
+              </button>
+              <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div class="card-body">
+                  <p> At the moment, Pomelody only supports <b> Spotify </b> playlists. We are unable to implement Youtube playlists because of the fact that Youtube does not support background playing and our application's focus is to minimize screen usage.
+                  </p>
+                </div>
+              </div>
+            </div>
+
         </div>
     </body>
 </html>
