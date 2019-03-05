@@ -22,13 +22,10 @@ exports.viewAboutPomodoro = function(request, response){
 	response.render('about-pomodoro', data);
 };
 
-
 exports.viewInstructions = function(request, response){
 	console.log("hi im working uwu");
 	response.render('instructions', data);
 };
-
-
 
 exports.viewPrevSettings = function(request, response){
 	console.log("hi im working uwu");
