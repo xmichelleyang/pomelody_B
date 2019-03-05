@@ -4,6 +4,7 @@
 //   $("#main-content").append(result['prodURL']);
 // }
 
+
 function verifyProdURL(){
   var url = (document.getElementById("prod-url").value);
   // isProd = true;
