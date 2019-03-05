@@ -71,7 +71,7 @@
                     response_type: "code",
                     redirect_uri: document.URL + 'spotifyLogin'
                 }
-                //authorizeURL += $.param(params);
+                authorizeURL += $.param(params);
 
                 console.log(authorizeURL);
                 window.location.href = authorizeURL;
