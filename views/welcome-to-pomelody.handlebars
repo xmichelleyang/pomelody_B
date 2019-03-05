@@ -45,25 +45,33 @@
             <div class="enter_button">
                 <a href="prev-settings"> <button type="button" class="btn btn-primary"> Load Previous Settings </button> </a>
             </div>
-            <div class="enter_button">
-                <a href="help-screen"> <button type="button" class="btn btn-primary"> Help </button> </a>
+            <div class="enter_button" id='showCount'>
+                <a href = 'help-screen'> <input type='button' class = 'btn btn-primary' id='btnClick' value='Help' onclick="CountFun()"/>
             </div>
+
             <div class="enter_button">
                 <a href="about-pomodoro"> <button type="button" class="btn btn-primary"> What is Pomodoro? </button> </a>
             </div>
             <div class="enter_button">
                 <a href="/"> <button type="button" class="btn btn-primary"> Logout </button> </a>
             </div>
-        </div>
 
         <script type="text/javascript">
             var url = document.URL;
-            // https://stackoverflow.com/questions/29934606/how-to-get-access-token-from-the-url
             access_token = url.match(/\#(?:access_token)\=([\S\s]*?)\&/)[1];
             if(access_token == null){
                 alert("Please ");
             }
-            console.log(access_token);
         </script>
+        
+        <script>
+        var cnt=0;
+        function CountFun(){
+         cnt=parseInt(cnt)+parseInt(1);
+         var divData=document.getElementById("showCount");
+         console.log(cnt)
+    }
+  </script>
+
     </body>
 </html>
