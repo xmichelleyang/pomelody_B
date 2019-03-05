@@ -234,3 +234,22 @@ h4 {
 .card-body p {
 	margin: 0px;
 }
+
+#grid ion-icon{
+	font-size: 20px !important;
+	font-weight: bold !important;
+}
+
+#grid button {
+	height: 120px;
+	width: 120px;
+	text-align: center;
+}
+
+.row {
+	display: flex;
+	flex-direction: row;
+}
+.row .col {
+	margin: 10px;
+}
