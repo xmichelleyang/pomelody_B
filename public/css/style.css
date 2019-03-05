@@ -68,6 +68,14 @@ input.url-input {
 	margin-bottom: 20px;
 }
 
+.header a {
+	color: white;
+}
+
+.header a:hover{
+	color: white;
+}
+
 h2 {
 	font-size: 30px !important;
 	margin-top: 0px !important;
@@ -125,12 +133,33 @@ h1,h2 {
 	text-align: center;
 }
 
+/* .header #header-icon {
+	margin-top: 5px !important;
+	border-style: solid;
+} */
 .alignleft {
 	float: left;
 }
 .alignright {
 	float: right;
+	align-items: center !important;
+	justify-content: center;
+
 }
+
+.alignright ion-icon {
+	padding-top: 20px !important;
+	padding-right: 20px !important;
+	padding-left: 20px !important;
+}
+
+.alignleft ion-icon{
+	padding-top: 20px !important;
+	padding-right: 20px !important;
+	padding-left: 20px !important;
+}
+
+
 
 .control_button {
 	margin-bottom: 15px !important;

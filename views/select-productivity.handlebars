@@ -9,6 +9,8 @@
         <title> Pomelody </title>
         <!-- Our  CSS -->
         <link href="css/style.css" rel="stylesheet">
+        <!-- <link href="css/flat-ui.css" rel="stylesheet"> -->
+
         <!-- Makes Website  Responsive -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
          <!-- Latest compiled and minified CSS -->
@@ -17,22 +19,27 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <!-- Latest compiled Bootstrap -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <!-- For icons -->
+        <script src="https://unpkg.com/ionicons@4.4.4/dist/ionicons.js"></script>
     </head>
 
     <body>
       <div class= "header">
-        <div class="alignleft"> <a href="instructions"> <button type="button" class="btn btn-primary"> Back </button> </a>
-        </div>
+        <a class="alignleft" href="instructions"> <ion-icon name="arrow-round-back"></ion-icon>  </a>
+
+        <!-- <div class="alignleft"> <a href="instructions"> <button type="button" class="btn btn-primary"> Back </button> </a> </div> -->
         <h1 id="test"> Select Productivity Settings</h1>
-        <div class="alignright"> <a href="select-relaxation"> <button type="button" class="btn btn-primary"> Next </button> </a>
-        </div>
+
+        <!-- <div class="alignright"> <a href="select-relaxation"> <button type="button" class="btn btn-success next"> Next </button> </a> -->
+        <a class="alignright" href="select-relaxation"> <ion-icon name="arrow-round-forward"></ion-icon>  </a>
+      </div>
 
       </div>
 
 
 
         <div class="center-container" id="main-content">
-            <div>
+            <div></ion-icon>
               <p id="info"> These will be the settings for when you're trying to focus and do work! Pick settings that you think will best help you focus! </p>
                 <h4> Select Playlist URL: </h4>
                 <p id="info"> This is music that will be playing in the background when you are working. </p>
