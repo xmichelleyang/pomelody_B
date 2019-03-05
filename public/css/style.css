@@ -68,7 +68,12 @@ input.url-input {
 	border-bottom-style: solid;
 }
 
-.header a, .header a:hover, .header a:active{
+/* For all states of header links, make them white */
+.header a:link,
+.header a:visited,
+.header a:hover,
+.header a:focus,
+.header a:active {
 	color: white;
 }
 /*
