@@ -80,6 +80,7 @@ const myInit = { method: 'GET',
                cache: 'default' };
 
 async function getConfirmation(url, type) {
+  console.log("url and type are", url, type);
 
   // Type == Prod or Relax
   if (type == undefined) {
@@ -90,35 +91,35 @@ async function getConfirmation(url, type) {
   var playlist_id = url.split("playlist/")[1];
   var playlist_name = await $.get("/playlistInfo/" + playlist_id);
   console.log(playlist_name);
-  // Ask user to confirm playlist //TODO: This can just be one confirm later with + name
+  // Ask user to confirm playlist
   var retVal = false;
-  if (type == "prod") {
-    retVal = confirm("Is " + playlist_name +  " the correct playlist?");
-  }
-  else {
-    retVal = confirm("Is " + playlist_name +  " the correct playlist?");
-  }
+  retVal = confirm("Is " + playlist_name +  " the correct playlist?");
 
   // If user says yes, update the value
   if(retVal == true ) {
     // Update the specific value
+
     if (type == "prod") {
-      localStorage.setItem('prod_url', url);
-      console.log("updated prod", url);
+      // Visually show user the playlist name
       document.getElementById('choose-prod').style.display = "none";
       document.getElementById('confirmed-playlist-prod').innerHTML = playlist_name;
       document.getElementById('resetBtn').style.display = 'block';
 
-
-
+      // Save playlist name
+      localStorage.setItem('prodName', playlist_name);
+      // Save playlist url
+      localStorage.setItem('prod_url', url);
     }
     else if (type == "relax") {
-      localStorage.setItem('relax_url', url);
-      console.log("updated relax", url);
+      console.log("updated relax", url, playlist_name);
       document.getElementById('choose-relax').style.display = "none";
       document.getElementById('confirmed-playlist-relax').innerHTML = playlist_name;
       document.getElementById('resetBtn').style.display = 'block';
 
+      // Save playlist name
+      localStorage.setItem('relaxName', playlist_name);
+      // Save playlist urlencoded
+      localStorage.setItem('relax_url', url);
     }
 
   }
@@ -130,12 +131,6 @@ function resetRelax(){
   localStorage.setItem('relax_url', '');
 }
 
-
-
-  // } else {
-  //   window.location.reload();
-  //   return false;
-  // }
 }
 
 
@@ -162,10 +157,10 @@ const handleProdSubmit = event => {
 
 async function genJSON(){
   var prod_url = localStorage.getItem('prod_url');
-  var prodName = "";
+  var prodName = localStorage.getItem('prodName');
   var prod_time = localStorage.getItem('prod_time');
   var relax_url = localStorage.getItem('relax_url');
-  var relaxName = "";
+  var relaxName = localStorage.getItem('relaxName');
   var relax_time = localStorage.getItem('relax_time');
 
   var dict = {
