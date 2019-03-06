@@ -2,9 +2,6 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <!-- This is a comment -->
-
-        <title> Pomelody </title>
         <!-- Our  CSS -->
         <link href="css/style.css" rel="stylesheet">
         <!-- Makes Website  Responsive -->
@@ -15,10 +12,10 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <!-- Latest compiled Bootstrap -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
         <!-- For icons -->
         <script src="https://unpkg.com/ionicons@4.4.4/dist/ionicons.js"></script>
-
+        <!-- Flat UI -->
+        <link href="css/flat-ui.css" rel="stylesheet">
         <!-- Google Analytics -->
         <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -30,35 +27,60 @@
         ga('send', 'pageview');
         </script>
         <!-- End Google Analytics -->
-        
+
     </head>
 
 
     <body>
-        <h1 class="header"> Previous Settings </h1>
+        <div class="header">
+          <a class="alignleft" href="welcome"> <ion-icon name="arrow-round-back"></ion-icon>  </a>
+          <h1>Previous Settings</h1>
+          <a class="alignright" href="#" onclick="genJSON()" data-toggle="tooltip" data-placement="bottom" title="Start"> <ion-icon name="exit"></ion-icon>  </a>
+        </div>
 
         <div class="center-container" id="main-content">
 
-            <div id="prevSettingsInfo">
-
-                    <b> Productivity Playlist: </b> <div class="prev-info" id="prodNameInfo"> {{prodName}} </div> <ion-icon name="create" onclick="editProdPlaylist()"></ion-icon> <br>
-
-
-                     <b> Productivity Time Interval: </b> <div class="prev-info" id="prodTimeInfo"> {{prodTime}} min </div> <ion-icon name="create" onclick="editProdTime()"></ion-icon> <br>
-
-
-                     <b> Relaxation Playlist: </b> <div class="prev-info" id="relaxNameInfo"> {{relaxName}} </div> <ion-icon name="create" onclick="editRelaxPlaylist()"></ion-icon> <br>
-
-
-                     <b> Relaxation Time Interval: </b> <div class="prev-info" id="relaxTimeInfo"> {{relaxTime}} min </div> <ion-icon name="create" onclick="editRelaxTime()"></ion-icon> <br>
-
-
-
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Productivity Playlist</h3>
             </div>
+            <div class="panel-body" id="prodNameInfo">
+              {{prodName}}<a href="#" class="alignright"> <ion-icon name="create" onclick="editProdPlaylist()"></ion-icon> </a>
+            </div>
+          </div>
+
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Productivity Time Interval:</h3>
+            </div>
+            <div class="panel-body" id="prodTimeInfo">
+              {{prodTime}} min<a href="#" class="alignright"> <ion-icon name="create" onclick="editProdTime()"></ion-icon> </a>
+            </div>
+          </div>
+
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Relaxation Playlist: </h3>
+            </div>
+            <div class="panel-body" id="relaxNameInfo">
+              {{relaxName}}<a href="#" class="alignright"> <ion-icon name="create" onclick="editRelaxPlaylist()"></ion-icon> </a>
+            </div>
+          </div>
+
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Relaxation Time Interval:</h3>
+            </div>
+            <div class="panel-body" id="relaxTimeInfo">
+              {{relaxTime}}  min <a href="#" class="alignright"> <ion-icon name="create" onclick="editRelaxTime()"></ion-icon> </a>
+            </div>
+          </div>
+
+<!--
         <div class="footer">
             <div class="alignleft"><a href="welcome"> <button type="button"> Back </button> </a> </div>
             <div class="alignright"><button type="button" onclick="genJSON()"> Start with these settings </button></div>
-        </div>
+        </div> -->
 
         </div>
 
