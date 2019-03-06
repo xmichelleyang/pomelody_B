@@ -1,10 +1,20 @@
-// This is just an example of what has to be donew
-
+// exports.dataInfo = function(req, res) {
+// 	var data = require('../data.json');
+// 	console.log("Trying to read in", __dirname);
+// 	console.log("I see ", data);
+// 	res.json(data);
+// }
 
 
 exports.dataInfo = function(req, res) {
-	var data = require('../data.json');
-	console.log("Trying to read in", __dirname);
-	console.log("I see ", data);
-	res.json(data);
+
+	// Define JSON File
+	var fs = require("fs");
+	// Get content from file
+	var contents = fs.readFileSync("../data.json");
+	// Define to JSON type
+	var jsonContent = JSON.parse(contents);
+	// Get Value from JSON
+	console.log("what do I see?:", jsonContent);
+	res.json(jsonContent);
 }
