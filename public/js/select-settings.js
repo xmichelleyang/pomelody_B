@@ -97,6 +97,33 @@ function formValidation(e, type){
   getConfirmation(url,'prod');
 }
 
+function formValidation2(e, type){
+  var url = (document.getElementById("relax-url").value);
+  var time =(document.getElementById("dropdownMenu1").value);
+  // validation fails if the input is blank
+  if(url === "" || time === "") 
+  {
+    return false;
+  }
+  else 
+  { 
+    // regular expression to match only alphanumeric characters and spaces
+    var re = /^(http:|https:)\/\/.*$/m
+
+  // validation fails if the input doesn't match our regular expression
+    if(!re.test(url)) 
+    {
+      alert("Error: Input a valid playlist URL");
+      return false;
+    } 
+    else { 
+      window.location = 'you-can-do-it'
+    }
+  }
+  genJSON();
+  getConfirmation(url,'relax');
+}
+
 
 var myHeaders = new Headers();
 myHeaders.append('acess-token', 'BQCIszHKSV4JrjkQttdVLAytD-1AFKAU1pmR4P5BJ5ncWhaL9c3kc83NU2HgTUfMn-w2DYRZJ0SxfpjpD7aMX4xe-Q0jd7TBylPPBErryDOtym7i5xP-831V19pkUzRBxmEr2QPRWI4nfohBJK5SvtvNOgi8PZm8HA');
