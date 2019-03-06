@@ -57,17 +57,17 @@
                 <h4> Select Playlist URL: </h4>
                 <p id="info"> This is music that will be playing in the background when you are working. </p>
                 <form id="productivity-form">
-                  <div id='choose-prod' >
+                  <div id='choose-prod' class= "choose-playlist" >
                     <input type="text" class="url-input form-control" placeholder="Paste Playlist URL" id="prod-url" />
                     <div class="enter_button">
                       <button type="button" class="btn btn-primary" onclick="verifyProdURL()" value ="Confirm" id="confirmBtn"> Confirm </button>
                       </div>
                   </div>
 
-
-
+                  <div class ="reset">
                   <p id="confirmed-playlist-prod"></p>
                   <a href="select-productivity"> <button type="button" class="btn btn-primary" value ="Reset" id="resetBtn" style="display: none;"> Reset </button> </a>
+                </div>
                     <h4> Select Time Interval: </h4>
                     <p id="info"> This is the amount of time that you want to be working for. </p>
                         <div class="dropdown">

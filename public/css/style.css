@@ -28,6 +28,7 @@ body, html {
 
 input.url-input {
 	width: 70%;
+
 }
 .alert {
   padding: 20px;
@@ -264,4 +265,17 @@ h4 {
 .panel-default a:focus,
 .panel-default a:active {
 	color: #333 !important;
+}
+
+.choose-playlist {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-end;
+
+}
+.reset{
+	display:flex;
+	flex-direction:row;
+	justify-content: stretch;
 }

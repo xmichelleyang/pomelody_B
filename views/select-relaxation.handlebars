@@ -40,6 +40,7 @@
       <div class= "header">
 
         <a class="alignleft" href="select-productivity"> <ion-icon name="arrow-round-back"></ion-icon>  </a>
+
         <h1>Select Relaxation Settings</h1>
         <a class="alignright" href="#" onclick="genJSON()" data-toggle="tooltip" data-placement="bottom" title="Start"> <ion-icon name="exit"></ion-icon>  </a>
         <!-- <div class="alignright"> <button type="button" class="btn btn-primary" onclick="genJSON()"> Start </button> -->
@@ -48,20 +49,27 @@
 
         <div class="center-container" id="main-content">
             <div>
+              <p id="info"> These will be the settings for when you're trying to focus and do work! Pick settings that you think will best help you focus! </p>
                 <h4> Select Playlist URL: </h4>
+                <p id="info"> This is music that will be playing in the background when you are relaxing. </p>
 
                 <form>
-                  <div id='choose-relax' >
-                    <input type="text" name="relax-url" class="url-input form-control" id="relax-url" />
+                  <div id='choose-relax' class = choose-playlist>
+                    <input type="text" name="relax-url" class="url-input form-control"  placeholder="Paste Playlist URL" id="relax-url" />
                     <div class="enter_button">
-                    <button type="button" onclick="verifyRelaxURL()"  class='btn btn-primary' value = "Confirm" id="confirmBtn"> Confirm </button>
+                      <button type="button" onclick="verifyRelaxURL()"  class='btn btn-primary' value = "Confirm" id="confirmBtn"> Confirm </button>
                     </div>
                   </div>
-                  <p id="confirmed-playlist-relax"></p>
-                  <a href="select-relaxation"> <button type="button" onclick="resetRelax()" class='btn btn-primary' value ="Reset" id="resetBtn" style="display: none;"> Reset </button> </a>
-                </form>
+
+
+                  <div class ="reset">
+                    <p id="confirmed-playlist-relax"></p>
+                    <a href="select-relaxation"> <button type="button" onclick="resetRelax()" class='btn btn-primary' value ="Reset" id="resetBtn" style="display: none;"> Reset </button> </a>
+                  </div>
 
                 <h4> Select Time Interval: </h4>
+                <p id="info"> This is the amount of time that you want to be relaxing for. </p>
+
                 <div class="dropdown">
                   <button class="btn btn-primary" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                     0 min
@@ -77,6 +85,7 @@
                     <li><a href="#" data-value="custom">Custom</a></li>
                   </ul>
                 </div>
+              </form>
             </div>
         </div>
 
