@@ -49,7 +49,7 @@
 
                 </div>
                 <div class="col" id="grid">
-                  <a href="prev-settings"> <button type="button" class="btn btn-primary"> <br> <ion-icon name="refresh"></ion-icon> <br>Load Previous <br> Settings </button> </a>
+                  <a href="prev-settings"> <button type="button" class="btn btn-primary" id="prev-settings-button" > <br> <ion-icon name="refresh"></ion-icon> <br>Load Previous <br> Settings </button> </a>
 
                 </div>
               </div>
@@ -66,13 +66,26 @@
             </div>
           </div>
 
-        <!-- <script type="text/javascript">
-            var url = document.URL;
-            access_token = url.match(/\#(?:access_token)\=([\S\s]*?)\&/)[1];
-            if(access_token == null){
-                alert("Please ");
-            }
-        </script> -->
+        <script async>
+
+          var relaxTime = "";
+          var prodTime = "";
+          var data = $.get("/data", function(result){
+              console.log(result);
+              relaxTime = result['relaxTime'];
+              prodTime = result['prodTime'];
+
+              console.log("prod time is", prodTime)
+              if(relaxTime == "" || prodTime == ""){
+                document.getElementById("prev-settings-button").disabled = true;
+                $("#prev-settings-button").attr("data-toggle", "dropdown");
+                $("#prev-settings-button").attr("data-placement", "top");
+                $("#prev-settings-button").attr("title", "No Previous Settings Found");
+              }
+            });
+
+
+        </script>
 
         <script>
         var cnt=0;
@@ -80,8 +93,8 @@
          cnt=parseInt(cnt)+parseInt(1);
          var divData=document.getElementById("showCount");
          console.log(cnt)
-    }
-  </script>
+          }
+        </script>
 
     </body>
 </html>
