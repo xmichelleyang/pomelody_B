@@ -14,7 +14,12 @@ exports.setAccessInfo = function(new_access_token, refresh_token) {
 }
 
 function getAccessInfo(){
-  return [accessToken, refreshToken]
+  return [accessToken, refreshToken];
+}
+
+exports.getToken = function(request, response) {
+  console.log("retunring the access token as", accessToken);
+  response.send(accessToken);
 }
 
 function genNewToken(){

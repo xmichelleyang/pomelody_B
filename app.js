@@ -60,6 +60,7 @@ app.get('/data', data.dataInfo);
 app.post('/saveJSON', saveJSON.saveJSON);
 app.get('/spotifyLogin', render.getSpotifyToken);
 app.get('/playlistInfo/:id', spotify.getPlaylistName);
+app.get('/spotifyToken', spotify.getToken)
 
 
 http.createServer(app).listen(app.get('port'), function(){

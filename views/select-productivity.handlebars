@@ -22,6 +22,8 @@
         <script src="https://unpkg.com/ionicons@4.4.4/dist/ionicons.js"></script>
         <!-- Flat UI -->
         <link href="css/flat-ui.css" rel="stylesheet">
+        <!-- Spotify webplayer -->
+        <script src="https://sdk.scdn.co/spotify-player.js"></script>
 
         <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -33,6 +35,9 @@
         ga('send', 'pageview');
         </script>
 
+
+        <!-- Spotify -->
+        <script src="js/spotify_playback.js" defer></script>
     </head>
 
     <body>
@@ -87,53 +92,91 @@
 
         <script type="text/javascript" src="js/select-settings.js"></script>
 
+
+        <!-- <script async>
+          spotifyInit();
+          async function spotifyInit() {
+            window.onSpotifyWebPlaybackSDKReady = () => {
+              const token = await $.get("/spotifyToken");
+              console.log("the token is ", token);
+              const player = new Spotify.Player({
+                name: 'Web Playback SDK Quick Start Player',
+                getOAuthToken: cb => { cb(token); }
+              });
+
+              // Error handling
+              player.addListener('initialization_error', ({ message }) => { console.error(message); });
+              player.addListener('authentication_error', ({ message }) => { console.error(message); });
+              player.addListener('account_error', ({ message }) => { console.error(message); });
+              player.addListener('playback_error', ({ message }) => { console.error(message); });
+
+              // Playback status updates
+              player.addListener('player_state_changed', state => { console.log(state); });
+
+              // Ready
+              player.addListener('ready', ({ device_id }) => {
+                console.log('Ready with Device ID', device_id);
+              });
+
+              // Not Ready
+              player.addListener('not_ready', ({ device_id }) => {
+                console.log('Device ID has gone offline', device_id);
+              });
+
+              // Connect to the player!
+              player.connect();
+            };
+
+          }
+
+
+        </script> -->
+
         <script type="text/javascript">
 
-        function customTime(){
-            console.log("custom time called ")
-            updateProdTimeVal(selected_value);
-            $(this).parents(".dropdown").find('.btn').html(selected_value + ' <span class="caret"></span>');
-            $(this).parents(".dropdown").find('.btn').val(selected_value);
-        }
-
-        // For Dropdown Menu to Change upon selection
-        $(".dropdown-menu li a").click(function(){
-            // Selected Drop down value
-            var selected_value = $(this).data('value')
-
-            // If custom, prompt user to input
-            if(selected_value == "custom") {
-                console.log("original value is ", localStorage.getItem('relax_time'));
-                var response = prompt("Please enter your desired time");
-                // If user presses cancel
-                if (response == null) {
-                    return;
-                }
-                // If user inputs invalid number
-                while (isNaN(response)) {
-                    alert("Please enter a valid number");
-                    response = prompt("Please enter your desired time");
-                }
-                selected_value = response;
-
-            }
-
-            // Update JSON and button
-            updateProdTimeVal(selected_value);
-            $(this).parents(".dropdown").find('.btn').html(selected_value + ' min <span class="caret"></span>');
-            $(this).parents(".dropdown").find('.btn').val(selected_value);
-
-        });
-
-
-        // Pressing Enter should press button
-        var input = document.getElementById("prod-url");
-        input.addEventListener("keyup", function(event) {
-          if (event.keyCode === 13) {
-           event.preventDefault();
-           document.getElementById("confirmBtn").click();
+          function customTime(){
+              console.log("custom time called ")
+              updateProdTimeVal(selected_value);
+              $(this).parents(".dropdown").find('.btn').html(selected_value + ' <span class="caret"></span>');
+              $(this).parents(".dropdown").find('.btn').val(selected_value);
           }
-        });
+
+          // For Dropdown Menu to Change upon selection
+          $(".dropdown-menu li a").click(function(){
+              // Selected Drop down value
+              var selected_value = $(this).data('value')
+
+              // If custom, prompt user to input
+              if(selected_value == "custom") {
+                  console.log("original value is ", localStorage.getItem('relax_time'));
+                  var response = prompt("Please enter your desired time");
+                  // If user presses cancel
+                  if (response == null) {
+                      return;
+                  }
+                  // If user inputs invalid number
+                  while (isNaN(response)) {
+                      alert("Please enter a valid number");
+                      response = prompt("Please enter your desired time");
+                  }
+                  selected_value = response;
+              }
+              // Update JSON and button
+              updateProdTimeVal(selected_value);
+              $(this).parents(".dropdown").find('.btn').html(selected_value + ' min <span class="caret"></span>');
+              $(this).parents(".dropdown").find('.btn').val(selected_value);
+
+          });
+
+
+          // Pressing Enter should press button
+          var input = document.getElementById("prod-url");
+          input.addEventListener("keyup", function(event) {
+            if (event.keyCode === 13) {
+             event.preventDefault();
+             document.getElementById("confirmBtn").click();
+            }
+          });
 
         </script>
 

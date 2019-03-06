@@ -78,10 +78,12 @@
                 var authorizeURL = 'https://accounts.spotify.com/authorize' + '?';
                 console.log(document.URL);
                 console.log("Upon log in button, the current redirect page is", document.URL + 'spotifyLogin');
+                var scope = "streaming user-read-private user-modify-playback-state user-read-birthdate user-read-email"; 
                 var params = {
                     client_id: "b4c291c0effb4b64bd6b961dc52fab74",
                     response_type: "code",
-                    redirect_uri: document.URL + 'spotifyLogin'
+                    redirect_uri: document.URL + 'spotifyLogin',
+                    scope: scope
                 }
                 authorizeURL += $.param(params);
 
